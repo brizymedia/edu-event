@@ -1,0 +1,63 @@
+/* 블로그(/blog/) 전용 스타일 — style.css 의 색 · 글꼴 변수를 그대로 쓴다.
+   이 파일은 손으로 고쳐도 된다. 블로그 HTML 은 scripts/build-blog.mjs 가 만든다. */
+
+.bl-head{padding-bottom:clamp(34px,5vw,60px)}
+.bl-head h1{font-size:clamp(30px,4.6vw,54px);max-width:900px;text-wrap:balance}
+.bl-meta{margin-top:14px;font-size:14.5px;color:var(--soft)}
+.bl-sec{padding:clamp(36px,5vw,64px) 0 clamp(48px,7vw,96px)}
+
+/* 글 */
+.bl-art{max-width:780px}
+.bl-lead{font-size:clamp(17.5px,2vw,20px);line-height:1.85;margin:0 0 26px;color:var(--ink)}
+.bl-lead a,.bl-body a,.bl-faq a{color:var(--coral-ink);font-weight:700;text-underline-offset:3px}
+.bl-fig{margin:0 0 30px}
+.bl-fig img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:var(--r-md);background:var(--sand);box-shadow:var(--shadow)}
+.bl-fig:not(.cover) img{aspect-ratio:16/10}
+.bl-fig figcaption{font-size:14px;color:var(--soft);margin-top:10px;line-height:1.6}
+.bl-points{background:var(--lime-bg);border-radius:var(--r-md);padding:22px 26px;margin:0 0 30px}
+.bl-points b{display:block;font-size:12px;letter-spacing:.16em;color:var(--lime-ink);margin-bottom:8px}
+.bl-points ul{list-style:disc;padding-left:20px}.bl-points li{margin:6px 0;line-height:1.75}
+.bl-toc{border-left:4px solid var(--coral);padding:2px 0 2px 18px;margin:0 0 38px}
+.bl-toc b{font-size:13px;color:var(--soft)}
+.bl-toc ol{list-style:none;margin:6px 0 0;padding:0}.bl-toc li{line-height:1.95}
+.bl-toc a{text-decoration:none}.bl-toc a:hover{color:var(--coral-ink)}
+.bl-body h2,.bl-faq h2{font-size:clamp(24px,3vw,32px);line-height:1.35;margin:46px 0 16px;scroll-margin-top:96px;text-wrap:balance}
+.bl-body p{margin:0 0 18px;line-height:1.95;color:#4a4543}
+.bl-body ul{list-style:disc;padding-left:22px;margin:0 0 22px}
+.bl-body ol{list-style:decimal;padding-left:24px;margin:0 0 22px}
+.bl-body li{line-height:1.85;margin:6px 0;color:#4a4543}
+.bl-body b{color:var(--ink)}
+.bl-tbl{overflow-x:auto;margin:0 0 26px;border-radius:var(--r-md);background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
+.bl-tbl table{border-collapse:collapse;width:100%;font-size:15.5px;min-width:520px}
+.bl-tbl th,.bl-tbl td{padding:12px 15px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);line-height:1.65}
+.bl-tbl th{background:var(--sand);font-weight:800;white-space:nowrap}
+.bl-tbl tbody tr:last-child td{border-bottom:0}
+.bl-tip{background:var(--coral-bg);border-radius:var(--r-md);padding:18px 22px;margin:0 0 26px;line-height:1.85;color:var(--ink)}
+.bl-tip::before{content:"체크 포인트";display:block;font-size:11.5px;font-weight:800;letter-spacing:.16em;color:var(--coral-ink);margin-bottom:4px}
+.bl-faq{margin-top:48px}
+.bl-faq details{background:#fff;border-radius:18px;box-shadow:inset 0 0 0 1px var(--line);margin:0 0 10px;padding:0 20px}
+.bl-faq summary{cursor:pointer;font-weight:700;padding:16px 0;line-height:1.6}
+.bl-faq details p{margin:0 0 16px;color:#4a4543;line-height:1.85}
+.bl-src{margin-top:36px;font-size:14px;color:var(--soft);line-height:1.7}
+.bl-src ul{list-style:disc;padding-left:20px;margin:6px 0 0}.bl-src a{color:var(--soft)}
+
+/* 목록 */
+.bl-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+.bl-chips a{padding:10px 18px;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);text-decoration:none;font-weight:700;font-size:15px}
+.bl-chips a:hover{background:var(--lime-bg)}
+.bl-chips a[aria-current]{background:var(--ink);color:#fff}
+.bl-chips small{margin-left:6px;opacity:.6;font-weight:600}
+.bl-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px}
+.bl-card{display:flex;flex-direction:column;text-decoration:none;background:#fff;border-radius:var(--r-md);overflow:hidden;box-shadow:inset 0 0 0 1px var(--line);transition:transform .5s var(--spring),box-shadow .5s var(--spring)}
+.bl-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.bl-card img,.bl-ph{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--sand)}
+.bl-ph{display:grid;place-items:center;background:linear-gradient(135deg,var(--coral-bg),var(--lime-bg));position:relative}
+.bl-ph span{font-family:var(--display);font-size:30px;color:var(--coral-ink);opacity:.8}
+.bl-card .in{padding:18px 20px 22px}
+.bl-card .r{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--coral-ink);margin-bottom:6px}
+.bl-card .t{font-family:var(--display);font-size:21px;line-height:1.35;color:var(--ink)}
+.bl-card .s{font-size:14.5px;color:var(--soft);line-height:1.65;margin-top:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.bl-more{padding:0 0 clamp(40px,6vw,80px)}
+.bl-more h2{font-size:clamp(24px,3vw,32px);margin-bottom:22px}
+.bl-empty{padding:26px;border-radius:var(--r-md);background:#fff;box-shadow:inset 0 0 0 1px var(--line);color:var(--soft)}
+@media (max-width:760px){.bl-body p{font-size:16.5px}.bl-cards{grid-template-columns:1fr}}

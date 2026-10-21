@@ -5,6 +5,7 @@
   python tools/build_site.py
 
 index · about · ceo · event · education · portfolio · contact · notice · 404 와 sitemap.xml · robots.txt · llms.txt 를 만든다.
+블로그(/blog/)는 이 다음에 `node scripts/build-blog.mjs` 를 돌려 만든다(sitemap.xml · llms.txt 에 블로그 항목을 이어 붙인다).
 글 · 사진 목록을 고칠 땐 이 파일(맨 위 「회사 정보」 「자료」)을 고치고 다시 돌릴 것. 결과 HTML 을 손으로 고치지 말 것.
 공지사항은 assets/data/notices.json 만 고치면 된다.
 """
@@ -139,7 +140,7 @@ def header(cur):
   <button class="mbtn" aria-label="메뉴 열기" aria-expanded="false" aria-controls="sheet"><i></i><i></i><i></i></button>
 </div></header>
 <div class="sheet" id="sheet">{sheet}
-  <div class="sub"><a href="ceo.html">대표 소개</a><a href="notice.html">공지사항</a><a href="quote.html">자동 견적서</a><a href="{NBLOG}" target="_blank" rel="noopener">네이버 블로그</a></div>
+  <div class="sub"><a href="ceo.html">대표 소개</a><a href="notice.html">공지사항</a><a href="quote.html">자동 견적서</a><a href="blog/index.html">블로그</a><a href="{NBLOG}" target="_blank" rel="noopener">네이버 블로그</a></div>
   <div class="btns" style="margin-top:28px">{btn("tel:" + TEL_RAW, "전화 " + TEL, "coral")}</div>
 </div>'''
 
@@ -150,7 +151,7 @@ def footer():
     <div><img class="fl" src="assets/img/logo-h.png" alt="{NAME}" width="243" height="36">
       <div class="info"><b style="color:#fff">{NAME}</b> · 소장 {CEO}<br>사업자등록번호 {BIZNO}<br>{ADDR}<br>전화 <a href="tel:{TEL_RAW}" style="display:inline">{TEL}</a> · <a href="mailto:{EMAIL}" style="display:inline">{EMAIL}</a></div></div>
     <div><h4>회사</h4><a href="about.html">회사 소개</a><a href="ceo.html">대표 소개</a><a href="notice.html">공지사항</a><a href="contact.html">오시는 길</a></div>
-    <div><h4>서비스</h4><a href="event.html">행사</a><a href="education.html">교육</a><a href="portfolio.html">포트폴리오</a><a href="quote.html">자동 견적서</a></div>
+    <div><h4>서비스</h4><a href="event.html">행사</a><a href="education.html">교육</a><a href="portfolio.html">포트폴리오</a><a href="quote.html">자동 견적서</a><a href="blog/index.html">블로그</a></div>
     <div><h4>문의</h4><a href="contact.html">견적 문의</a><a href="{KAKAO}" target="_blank" rel="noopener">카카오톡 상담</a><a href="{NBLOG}" target="_blank" rel="noopener">네이버 블로그</a></div>
   </div>
   <div class="copy"><span>© {datetime.date.today().year} {NAME}. All rights reserved.</span><span>즐거움을 기획하고, 성장을 교육합니다</span></div>
