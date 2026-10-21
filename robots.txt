@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+
+Sitemap: https://brizymedia.github.io/edu-event/sitemap.xml

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>공지사항 관리 | 이벤트와 교육연구소</title>
+<meta name="description" content="공지사항 관리 화면">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#FFF9F1">
+
+<link rel="canonical" href="https://brizymedia.github.io/edu-event/notice-admin.html">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
+<meta property="og:type" content="website"><meta property="og:locale" content="ko_KR"><meta property="og:site_name" content="이벤트와 교육연구소">
+<meta property="og:title" content="공지사항 관리 | 이벤트와 교육연구소"><meta property="og:description" content="공지사항 관리 화면"><meta property="og:url" content="https://brizymedia.github.io/edu-event/notice-admin.html"><meta property="og:image" content="https://brizymedia.github.io/edu-event/assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="assets/style.css?v=1">
+<meta name="robots" content="noindex,nofollow">
+</head>
+<body>
+<a class="skip" href="#main">본문으로 바로가기</a>
+<header class="hdr"><div class="pill">
+  <a class="logo" href="index.html" aria-label="이벤트와 교육연구소 처음으로"><img src="assets/img/logo-h.png" alt="이벤트와 교육연구소 Event & Education institute" width="243" height="36"></a>
+  <nav aria-label="주 메뉴"><a href="about.html">회사 소개</a><a href="event.html">행사</a><a href="education.html">교육</a><a href="portfolio.html">포트폴리오</a><a href="contact.html">견적 문의</a></nav>
+  <a class="tel" href="tel:01091895589"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>010-9189-5589</a>
+  <button class="mbtn" aria-label="메뉴 열기" aria-expanded="false" aria-controls="sheet"><i></i><i></i><i></i></button>
+</div></header>
+<div class="sheet" id="sheet"><a class="m" href="about.html">회사 소개</a><a class="m" href="event.html">행사</a><a class="m" href="education.html">교육</a><a class="m" href="portfolio.html">포트폴리오</a><a class="m" href="contact.html">견적 문의</a>
+  <div class="sub"><a href="ceo.html">대표 소개</a><a href="notice.html">공지사항</a><a href="quote.html">자동 견적서</a><a href="https://blog.naver.com/event_edu" target="_blank" rel="noopener">네이버 블로그</a></div>
+  <div class="btns" style="margin-top:28px"><a class="btn coral" href="tel:01091895589">전화 010-9189-5589<span class="ar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+</div>
+<main id="main">
+<section class="phead" style="padding-bottom:50px"><div class="wrap"><span class="eb"><i></i>ADMIN</span><h1 style="font-size:clamp(30px,5vw,52px)">공지사항 관리</h1>
+<p class="lead">공지를 쓰면 홈페이지 공지사항에 바로 올라갑니다(몇 분 안에). 사진 올리기와 같은 비밀번호를 씁니다.</p></div></section>
+<section class="sec" style="padding-top:20px"><div class="wrap" style="max-width:900px">
+<div id="setup" class="done on" hidden></div>
+<form class="f" id="login" style="max-width:420px"><label>비밀번호<input type="password" id="pw" autocomplete="current-password"></label><div><button class="btn" type="submit">들어가기<span class="ar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button></div><p id="lmsg" style="color:var(--coral-ink)"></p></form>
+<div id="panel" hidden>
+  <div class="bz"><div class="in" style="padding:clamp(20px,3vw,34px)">
+  <form class="f" id="nf"><input type="hidden" id="nid">
+    <div class="row"><label>날짜<input id="nd" placeholder="2026.10.20"></label><label>NEW 표시<select id="nn"><option value="1">표시함</option><option value="0">표시 안 함</option></select></label></div>
+    <label>제목 <em>*</em><input id="nt" maxlength="120"></label>
+    <label>내용 (선택)<textarea id="nb" maxlength="1500" placeholder="자세한 안내가 있으면 적어 주세요."></textarea></label>
+    <div class="btns"><button class="btn coral" type="submit">저장하기<span class="ar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button><button class="btn line" type="button" id="nreset">새로 쓰기<span class="ar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button></div>
+    <p id="nmsg" role="status"></p>
+  </form></div></div>
+  <h2 class="h2" style="font-size:26px;margin:40px 0 10px">올린 공지</h2>
+  <ul class="notes" id="nlist"></ul>
+</div>
+</div></section>
+<script>
+(function(){
+  var SERVER = '', KEY = 'edu-notice-pw';
+  var $ = function(i){ return document.getElementById(i); };
+  var pw = ''; try { pw = sessionStorage.getItem(KEY) || ''; } catch(e) {}
+  var list = [];
+  function esc(t){ return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+  function call(body){
+    body.pw = pw;
+    return fetch(SERVER, {method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'}, body: JSON.stringify(body)}).then(function(r){return r.json();});
+  }
+  function today(){ var d=new Date(); return d.getFullYear()+'.'+('0'+(d.getMonth()+1)).slice(-2)+'.'+('0'+d.getDate()).slice(-2); }
+  function reset(){ $('nid').value=''; $('nd').value=today(); $('nt').value=''; $('nb').value=''; $('nn').value='1'; }
+  function draw(){
+    $('nlist').innerHTML = list.length ? list.map(function(n,i){
+      return '<li><div class="row" style="flex-wrap:wrap"><time>'+esc(n.d)+'</time><div style="flex:1;min-width:200px"><span class="t">'+esc(n.t)+(n.n?' <span class="new">NEW</span>':'')+'</span>'+(n.b?'<span class="d">'+esc(n.b)+'</span>':'')+'</div><span class="btns"><button class="btn sm line" data-e="'+i+'">수정</button><button class="btn sm" data-x="'+i+'">삭제</button></span></div></li>';
+    }).join('') : '<li><div class="row"><span class="t" style="color:var(--soft)">아직 이 화면으로 올린 공지가 없습니다. (처음 열 때 기본으로 보이는 공지는 홈페이지에 들어 있는 것입니다.)</span></div></li>';
+  }
+  function open(){
+    $('login').hidden = true; $('panel').hidden = false; reset();
+    call({action:'notice-list'}).then(function(j){ if(j && j.ok){ list=j.notices||[]; draw(); } else { $('login').hidden=false; $('panel').hidden=true; $('lmsg').textContent=(j&&j.error)||'열 수 없습니다.'; } })
+      .catch(function(){ $('lmsg').textContent='서버에 연결하지 못했습니다.'; $('login').hidden=false; $('panel').hidden=true; });
+  }
+  if(!SERVER){
+    $('login').hidden = true;
+    var s = $('setup'); s.hidden = false;
+    s.innerHTML = '<b>아직 공지 서버가 연결되지 않았습니다.</b><br>큰길브리지가 사진 업로드 서버(apps-script/gallery)를 배포하고 주소를 넣으면 이 화면이 열립니다. 그 전에는 큰길브리지(1533-7295)에 공지 내용을 알려 주세요.';
+  }
+  $('login').addEventListener('submit', function(e){
+    e.preventDefault(); pw = $('pw').value; if(!pw) return;
+    try { sessionStorage.setItem(KEY, pw); } catch(x) {}
+    open();
+  });
+  $('nf').addEventListener('submit', function(e){
+    e.preventDefault();
+    var t = $('nt').value.trim(); if(!t){ $('nmsg').textContent='제목을 적어 주세요.'; return; }
+    $('nmsg').textContent='저장하는 중…';
+    call({action:'notice-save', notice:{id:$('nid').value, d:$('nd').value, t:t, b:$('nb').value, n:$('nn').value==='1'}})
+      .then(function(j){ if(j&&j.ok){ list=j.notices; draw(); reset(); $('nmsg').textContent='저장했습니다. 홈페이지에는 몇 분 안에 보입니다.'; } else $('nmsg').textContent=(j&&j.error)||'저장하지 못했습니다.'; })
+      .catch(function(){ $('nmsg').textContent='서버에 연결하지 못했습니다.'; });
+  });
+  $('nreset').addEventListener('click', reset);
+  $('nlist').addEventListener('click', function(e){
+    var b = e.target.closest('button'); if(!b) return;
+    if(b.dataset.e){ var n=list[+b.dataset.e]; $('nid').value=n.id; $('nd').value=n.d; $('nt').value=n.t; $('nb').value=n.b||''; $('nn').value=n.n?'1':'0'; scrollTo({top:0,behavior:'smooth'}); }
+    if(b.dataset.x && confirm('이 공지를 삭제할까요?')){ var n2=list[+b.dataset.x]; call({action:'notice-delete', id:n2.id}).then(function(j){ if(j&&j.ok){ list=j.notices; draw(); } else alert((j&&j.error)||'삭제하지 못했습니다.'); }); }
+  });
+  if(SERVER && pw) open();
+})();
+</script>
+</main>
+<footer class="ft"><div class="wrap">
+  <div class="grid">
+    <div><img class="fl" src="assets/img/logo-h.png" alt="이벤트와 교육연구소" width="243" height="36">
+      <div class="info"><b style="color:#fff">이벤트와 교육연구소</b> · 소장 황윤수<br>사업자등록번호 578-03-01411<br>인천광역시 남동구 문화서로62번길 17, 3층 302호<br>전화 <a href="tel:01091895589" style="display:inline">010-9189-5589</a> · <a href="mailto:ihaha2040@gmail.com" style="display:inline">ihaha2040@gmail.com</a></div></div>
+    <div><h4>회사</h4><a href="about.html">회사 소개</a><a href="ceo.html">대표 소개</a><a href="notice.html">공지사항</a><a href="contact.html">오시는 길</a></div>
+    <div><h4>서비스</h4><a href="event.html">행사</a><a href="education.html">교육</a><a href="portfolio.html">포트폴리오</a><a href="quote.html">자동 견적서</a></div>
+    <div><h4>문의</h4><a href="contact.html">견적 문의</a><a href="http://pf.kakao.com/_XVrSs/chat" target="_blank" rel="noopener">카카오톡 상담</a><a href="https://blog.naver.com/event_edu" target="_blank" rel="noopener">네이버 블로그</a></div>
+  </div>
+  <div class="copy"><span>© 2026 이벤트와 교육연구소. All rights reserved.</span><span>즐거움을 기획하고, 성장을 교육합니다</span></div>
+  <p class="src">이 사이트의 사진 · 글은 이벤트와 교육연구소가 직접 운영한 행사와 교육 자료입니다. 무단 복제를 금합니다.</p>
+</div></footer>
+<div class="dock"><a href="tel:01091895589">전화 상담</a><a href="http://pf.kakao.com/_XVrSs/chat" target="_blank" rel="noopener">카카오톡 상담</a></div>
+<div class="lb" role="dialog" aria-label="사진 크게 보기"><button aria-label="닫기">×</button><div style="text-align:center"><img alt="" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><p></p></div></div>
+<script src="assets/app.js?v=1"></script>
+<script src="assets/edit.js?v=1" defer></script>
+<script defer src="https://www.ai-make.co.kr/stats/stats.js" data-site="edu"></script>
+</body>
+</html>
