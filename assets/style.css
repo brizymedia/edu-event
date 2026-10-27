@@ -94,10 +94,11 @@ ul,ol{margin:0;padding:0;list-style:none}
 /* ── 히어로: 행사 | 교육 좌우 2분할 + 가운데 아치 ── */
 .hero{position:relative;min-height:100vh;min-height:100svh;display:grid;grid-template-columns:1fr 1fr;background:var(--ink);overflow:hidden;isolation:isolate}
 .pane{position:relative;display:flex;align-items:flex-end;text-decoration:none;color:#fff;overflow:hidden;min-height:620px}
-.pane img{max-width:none;position:absolute;inset:-7%;width:114%;height:114%;object-fit:cover;transition:transform 1.4s var(--spring);will-change:transform}
+.pane img{max-width:none;position:absolute;inset:-3%;width:106%;height:106%;object-fit:cover;transition:transform 1.4s var(--spring);will-change:transform}
 .pane::before{content:"";position:absolute;inset:0;z-index:1;transition:opacity .8s var(--spring)}
 .pane.ev::before{background:linear-gradient(180deg,rgba(250,138,122,.18) 0%,rgba(168,52,32,.35) 45%,rgba(61,28,22,.88) 100%)}
 .pane.ed::before{background:linear-gradient(180deg,rgba(207,229,163,.12) 0%,rgba(63,100,40,.38) 45%,rgba(30,48,22,.9) 100%)}
+.pane.ev img{object-position:16% 60%}.pane.ed img{object-position:60% 30%}
 .pane:hover img{transform:scale(1.045)}
 .pane .cap{position:relative;z-index:2;padding:0 clamp(24px,4.5vw,72px) clamp(40px,7vh,84px);width:100%}
 .pane.ev .cap{padding-right:clamp(190px,24vw,330px)}
@@ -305,7 +306,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 /* 행사/교육 블록 */
 .cat{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,70px);align-items:center;padding:clamp(44px,6vw,84px) 0;border-top:1px solid var(--line)}
 .cat:first-of-type{border-top:0}
-.cat:nth-of-type(even) .ph{order:2}
+.cat:nth-of-type(even) .phw{order:2}
 .cat .ph{border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/3;box-shadow:var(--shadow);background:var(--sand);position:relative}
 .cat .ph img{width:100%;height:100%;object-fit:cover}
 .cat .ph.pending{display:grid;place-items:center;text-align:center;padding:30px;color:var(--soft);font-size:15px;background:repeating-linear-gradient(135deg,var(--sand),var(--sand) 14px,#fff 14px,#fff 28px)}
@@ -314,7 +315,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 .cat p.i{color:var(--soft)}
 .cat .plist{margin:22px 0 26px}
 .cat .plist h4{font-family:var(--body);font-weight:800;font-size:13px;letter-spacing:.12em;color:var(--lime-ink);margin-bottom:10px}
-@media (max-width:860px){.cat{grid-template-columns:1fr}.cat:nth-of-type(even) .ph{order:0}}
+@media (max-width:860px){.cat{grid-template-columns:1fr}.cat:nth-of-type(even) .phw{order:0}}
 .tabs{display:flex;gap:8px;flex-wrap:wrap;position:sticky;top:78px;z-index:20;padding:10px 0}
 .tabs a{padding:10px 18px;border-radius:999px;background:rgba(255,255,255,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:inset 0 0 0 1px var(--line);text-decoration:none;font-weight:600;font-size:15px;transition:background .4s var(--spring)}
 .tabs a:hover{background:var(--lime)}
@@ -407,3 +408,18 @@ form.f .hp{position:absolute;left:-9999px}
 .js .rv{opacity:0;transform:translateY(46px);filter:blur(8px);transition:opacity 1s var(--spring),transform 1s var(--spring),filter 1s var(--spring)}
 .js .rv.in{opacity:1;transform:none;filter:none}
 .js .rv.d1{transition-delay:.08s}.js .rv.d2{transition-delay:.16s}.js .rv.d3{transition-delay:.24s}.js .rv.d4{transition-delay:.32s}
+
+/* 사진 더 */
+.phw{display:grid;gap:12px}
+.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.thumbs img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;box-shadow:var(--shadow)}
+.thumbs:has(img:nth-child(2):last-child){grid-template-columns:1fr 1fr}
+.pf figure.later{display:none}
+.vids{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.vids.one{grid-template-columns:minmax(0,820px)}
+.vid{margin:0;border-radius:var(--r-md);overflow:hidden;background:#000;box-shadow:var(--shadow)}
+.vid video{width:100%;display:block;aspect-ratio:4/3;object-fit:contain;background:#000}
+.vids.one .vid video{aspect-ratio:16/9}
+.vid figcaption{padding:12px 16px;background:#fff;font-weight:600;font-size:15px}
+@media (max-width:980px){.vids{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.vids{grid-template-columns:1fr}}

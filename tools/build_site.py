@@ -38,16 +38,16 @@ EVENT_CATS = [
     dict(id='kinder', name='유치원 · 어린이집', c='#FFD9D1', title='처음 만나는 운동회, 가장 즐거운 하루', img='g10', alt='어린이집 크리스마스 매직쇼 현장',
          intro='아이들의 첫 운동회와 첫 축제는 평생 기억에 남습니다. 연령에 맞는 쉽고 안전한 프로그램으로, 아이도 선생님도 학부모님도 함께 웃는 시간을 만듭니다.',
          prog=['명랑운동회', '버블쇼', '매직쇼', '어린이날 체험부스', '레크리에이션']),
-    dict(id='school', name='초등학교', c='#CFE5A3', title='운동회부터 학교 축제까지', img='g01', alt='초등학교 체육대회 현장',
+    dict(id='school', name='초등학교', c='#CFE5A3', title='운동회부터 학교 축제까지', img='p/school11', alt='초등학교 운동회에서 에어바운스 문을 지나 달리는 아이들',
          intro='학년별 눈높이에 맞춘 운동회와 체육대회, 아이들이 주인공이 되는 학교 축제와 학예회까지. 진행부터 에어바운스, 음향 · 조명 장비까지 학교 행사의 모든 것을 준비합니다.',
          prog=['운동회', '체육대회', '레크리에이션', '에어바운스', '놀이체험', '매직쇼', '버블쇼', '학교축제', '학예회 음향 및 조명']),
-    dict(id='corp', name='기업체 · 기관', c='#FBD9A8', title='순서와 격식이 중요한 행사', img='g08', alt='대학 홈커밍데이 매직쇼 무대',
+    dict(id='corp', name='기업체 · 기관', c='#FBD9A8', title='순서와 격식이 중요한 행사', img='p/corp01', alt='대형 스크린이 있는 행사 무대에서 진행하는 소장',
          intro='조직의 분위기를 살리는 체육대회와 팀빌딩부터, 한 치의 실수도 허락되지 않는 기념식까지. 행사 성격에 맞는 진행과 연출로 품격 있는 자리를 완성합니다.',
          prog=['체육대회', '레크리에이션', '팀빌딩', '송년회', '신년회', '시상식', '이취임식', '기공식', '준공식', '오픈식', '전문 MC', '가수 섭외']),
-    dict(id='local', name='지자체 · 축제', c='#C9E6F7', title='무대부터 사람까지', img=None, alt='',
+    dict(id='local', name='지자체 · 축제', c='#C9E6F7', title='무대부터 사람까지', img='p/univ03', alt='현수막이 걸린 축제 무대 공연 현장',
          intro='지역 주민이 함께 즐기는 축제는 무대, 장비, 인력이 맞물려야 성공합니다. 기획부터 무대 설치, 공연 운영, 체험부스까지 축제 현장 전체를 책임지고 운영합니다.',
          prog=['지역축제', '공연행사 운영', '무대 · 음향 · 조명', '천막 · 테이블 · 장비 대여', '체험부스 운영']),
-    dict(id='church', name='교회', c='#E3D6F6', title='온 교회가 함께 웃는 시간', img='g05', alt='성탄 축하 행사 매직쇼 무대',
+    dict(id='church', name='교회', c='#E3D6F6', title='온 교회가 함께 웃는 시간', img='p/church01', alt='전교인 명랑운동회에서 줄지어 선 참가자들',
          intro='주일학교 아이들부터 온 성도까지 한마음이 되는 행사를 만듭니다. 교회 공동체의 분위기에 맞춘 프로그램으로 즐거움과 은혜를 함께 나눕니다.',
          prog=['교회 체육대회', '여름성경학교 레크리에이션', '성탄 · 어린이주일 행사', '버블쇼', '매직쇼']),
 ]
@@ -73,19 +73,54 @@ EDU = [
          t='나의 흥미와 강점을 발견하고, 꿈을 구체적인 계획으로 연결합니다.'),
 ]
 # 사진 번호 g01~g10 (assets/img/g*.webp) ↔ 제목 · 분류. 필터 slug: kinder school corp local church edu
-WORKS = [
-    ('g01', '초등학교 체육대회', '대형 공 굴리기 · 체육관', 'school', 'w t'),
-    ('g10', '어린이집 크리스마스 매직쇼', '', 'kinder', ''),
+# 사진 번호 ↔ 제목 · 분류. 분류는 공백으로 여러 개 가능. 필터 slug: kinder school corp gov local church edu magic
+# g01~g10 = 기존 시안 사진, p/<접두어>NN = 2026-10-25 대표님이 폴더별로 보내 준 사진(카카오톡 받은 파일/이벤트와교육연구소)
+WORKS_OLD = [
+    ('g01', '초등학교 체육대회', '대형 공 굴리기 · 체육관', 'school', ''),
+    ('g10', '어린이집 크리스마스 매직쇼', '', 'kinder magic', ''),
     ('g03', '초등학교 명랑운동회', '낙하산 놀이', 'school', ''),
-    ('g04', '초등학교 운동회', '운동장 단체 게임', 'school', 'w'),
-    ('g05', '성탄 축하 행사 매직쇼', '', 'church', ''),
+    ('g04', '초등학교 운동회', '운동장 단체 게임', 'school', ''),
+    ('g05', '성탄 축하 행사 매직쇼', '', 'church magic', ''),
     ('g06', '운동회 에어바운스', '', 'school', ''),
-    ('g07', '초등학교 체육대회', '체육관 단체 게임', 'school', 'w'),
-    ('g08', '대학 홈커밍데이 매직쇼', '2018', 'corp', ''),
-    ('g09', '비둘기 마술', '', 'corp', ''),
-    ('g02', '유치원 매직쇼', '', 'kinder', ''),
+    ('g07', '초등학교 체육대회', '체육관 단체 게임', 'school', ''),
+    ('g08', '대학 홈커밍데이 매직쇼', '2018', 'corp magic', ''),
+    ('g09', '비둘기 마술', '', 'corp magic', ''),
+    ('g02', '유치원 매직쇼', '', 'kinder magic', ''),
 ]
-PF_FILTERS = [('all', '전체'), ('kinder', '유치원 · 어린이집'), ('school', '초등학교'), ('corp', '기업체 · 기관'), ('local', '지자체 · 축제'), ('church', '교회'), ('edu', '교육')]
+PHOTO_SETS = [   # (접두어, 장수, 제목, 분류)
+    ('school', 29, '초등학교 운동회', 'school'),
+    ('church', 23, '교회 전교인 명랑운동회', 'church'),
+    ('sci', 12, '과학실험 마술수업', 'edu'),
+    ('magic', 8, '마술 공연', 'magic'),
+    ('gov', 5, '관공서 체육대회', 'corp gov'),
+    ('corp', 4, '기업 레크리에이션', 'corp'),
+    ('univ', 6, '대학 축제 공연', 'local'),
+]
+WORKS_NEW = {}
+for _pre, _n, _t, _c in PHOTO_SETS:
+    WORKS_NEW[_pre] = [('p/%s%02d' % (_pre, i), _t, '', _c, '') for i in range(1, _n + 1)]
+
+
+def _mix():
+    """분류별로 번갈아 섞어서 「전체」에서도 다양하게 보이게 한다."""
+    order = ['school', 'sci', 'church', 'univ', 'corp', 'magic', 'gov']
+    out, i = [], 0
+    while any(WORKS_NEW[k][i:i + 1] for k in order):
+        for k in order:
+            if WORKS_NEW[k][i:i + 1]:
+                out.append(WORKS_NEW[k][i])
+        i += 1
+    return out
+
+
+WORKS = _mix() + WORKS_OLD
+
+
+def W(code):
+    return next(w for w in WORKS if w[0] == code)
+
+
+PF_FILTERS = [('all', '전체'), ('school', '초등학교'), ('kinder', '유치원 · 어린이집'), ('corp', '기업체 · 기관'), ('gov', '관공서 체육대회'), ('local', '지자체 · 축제'), ('church', '교회'), ('edu', '교육'), ('magic', '마술 · 공연')]
 REVIEWS = [
     ('30년 이상 교직생활을 하면서 비슷한 종목도 있는데 이번처럼 재미있었던 적은 없었습니다. 내년 운동회 <mark>꼭 예약해 주세요!</mark>', '초등학교 선생님'),
     ('<mark>역대급 최고의 운동회</mark>였습니다! 예년에 해보지 못한 경기들이 있어서 학생들이 더 좋아했고, 학년별로 나눠 진행한 게 굿 초이스였습니다.', '초등학교 담당교사'),
@@ -247,7 +282,7 @@ def build_index():
     aud = ''.join(
         f'<a class="rv d{i % 4 + 1}" href="event.html#{c["id"]}" style="--c:{aud_cols[i]}"><span class="n">0{i + 1}</span><h3>{c["name"]}</h3><p>{AUD_SHORT[c["id"]]}</p><span class="more">자세히 보기 →</span></a>'
         for i, c in enumerate(EVENT_CATS))
-    gal = ''.join(gal_fig(w) for w in [WORKS[0], WORKS[1], WORKS[2], WORKS[3], WORKS[7], WORKS[4]])
+    gal = ''.join(gal_fig(W(cd), cls) for cd, cls in [('p/school09', 'w t'), ('p/sci10', ''), ('p/church21', ''), ('p/univ02', 'w'), ('p/corp01', ''), ('p/magic04', '')])
     rev = ''.join(f'<figure class="rv d{i + 1}"><p>{t}</p><cite>{who}</cite></figure>' for i, (t, who) in enumerate(REVIEWS[:3]))
     notes = ''.join(
         f'<li><a href="notice.html#n{i}"><time>{esc(n["d"])}</time><span class="t">{esc(n["t"])}{" <span class=new>NEW</span>" if n.get("n") else ""}</span></a></li>'
@@ -255,7 +290,7 @@ def build_index():
     body = f'''
 <section class="hero" aria-label="이벤트와 교육연구소 소개">
   <a class="pane ev" href="event.html" aria-label="행사 보기">
-    <img src="assets/img/hero-event.webp" alt="체육관을 가득 채운 아이들의 운동회 현장" width="1600" height="900" fetchpriority="high">
+    <img src="assets/img/hero-event.webp" alt="운동회 트랙을 힘껏 달리는 아이들" width="1280" height="721" fetchpriority="high">
     <div class="cap"><span class="tag">EVENT</span><h2>행사로<br>마음을 모읍니다</h2><p>운동회 · 무대 · 축제 현장</p><span class="go">행사 보기<span>{ARROW}</span></span></div>
   </a>
   <div class="core">
@@ -268,7 +303,7 @@ def build_index():
     </div></div></div>
   </div>
   <a class="pane ed" href="education.html" aria-label="교육 보기">
-    <img src="assets/img/hero-edu.webp" alt="아이들이 눈을 반짝이며 지켜보는 무대 수업 현장" width="1100" height="771">
+    <img src="assets/img/hero-edu.webp" alt="과학실험놀이 무대에서 실험을 보여 주는 소장" width="1280" height="721">
     <div class="cap"><span class="tag">EDUCATION</span><h2>교육으로<br>사람을 키웁니다</h2><p>수업 · 강의 현장</p><span class="go">교육 보기<span>{ARROW}</span></span></div>
   </a>
   <div class="confetti" aria-hidden="true"></div>
@@ -292,7 +327,7 @@ def build_index():
   <div class="sechead"><div><span class="eb"><i></i>TWO PARTS</span><h2 class="h2 rv">두 개의 <span class="hl">파트</span></h2></div></div>
   <div class="parts">
     <article class="bz part ev rv"><div class="in">
-      <div class="ph"><img src="assets/img/g04.webp" alt="초등학교 운동회 운동장 단체 게임" loading="lazy" decoding="async"></div>
+      <div class="ph"><img src="assets/img/p/school11.webp" alt="운동회에서 에어바운스 문을 지나 달리는 아이들" loading="lazy" decoding="async"></div>
       <span class="eb"><i></i>EVENT</span>
       <h3>즐거움을 기획합니다</h3>
       <p>학교 운동회와 축제부터 기업체 행사, 기관의 격식 있는 기념식과 지역 축제, 교회 행사까지. 진행 MC, 공연, 무대 · 음향 · 조명, 장비와 인력까지 한 번에 맡겨주세요.</p>
@@ -300,7 +335,7 @@ def build_index():
       {btn("event.html", "행사 자세히 보기", "coral")}
     </div></article>
     <article class="bz part ed rv d2"><div class="in">
-      <div class="ph"><img src="assets/img/g02.webp" alt="유치원 매직쇼 수업 무대" loading="lazy" decoding="async"></div>
+      <div class="ph"><img src="assets/img/p/sci01.webp" alt="유치원 아이들이 지켜보는 과학실험 수업" loading="lazy" decoding="async"></div>
       <span class="eb lime"><i></i>EDUCATION</span>
       <h3>성장을 교육합니다</h3>
       <p>심리치료상담을 전공한 소장이 직접 설계한 프로그램으로, 자신의 감정을 이해하고 함께 소통하고 스스로의 길을 찾아가도록 돕습니다. 즐거운 활동 속에서 배우기 때문에 오래 기억에 남습니다.</p>
@@ -431,7 +466,11 @@ def build_ceo():
   </div>
 </div></section>
 
-<section class="sec"><div class="wrap two">
+<section class="sec"><div class="wrap">
+  <div class="sechead"><div><span class="eb lime"><i></i>ON STAGE</span><h2 class="h2 rv">무대 위의 <span class="hl">소장</span></h2></div></div>
+  <div class="gal rv" style="grid-auto-rows:clamp(140px,20vw,260px)"><figure class="w" data-t="행사 무대 진행"><img src="assets/img/p/corp01.webp" alt="대형 스크린이 있는 무대에서 진행하는 소장" loading="lazy"><figcaption>행사 무대 진행</figcaption></figure><figure class="s" data-t="기업 레크리에이션 · 마술"><img src="assets/img/p/corp03.webp" alt="무대 위에서 마술을 보여 주는 소장" loading="lazy"><figcaption>무대 마술</figcaption></figure><figure class="s" data-t="관객과 함께하는 무대"><img src="assets/img/p/corp04.webp" alt="무대에서 관객과 함께하는 마술" loading="lazy"><figcaption>관객과 함께</figcaption></figure></div>
+</div></section>
+<section class="sec sand"><div class="wrap two">
   <div><span class="eb"><i></i>STORY</span><h2 class="h2 rv">운동장에서 보낸 <span class="hl">20년</span></h2>
     <figure class="rv" style="margin:28px 0 0"><img src="assets/img/story-2011.webp" alt="2011 위즈 한마음 체육대회 현장" loading="lazy" style="border-radius:24px;box-shadow:var(--shadow)"><figcaption style="font-size:14px;color:var(--soft);margin-top:10px">2011 위즈 한마음 체육대회</figcaption></figure></div>
   <ol class="tl">{tl}</ol>
@@ -442,12 +481,30 @@ def build_ceo():
 
 
 # ════════════════════════ 행사 ════════════════════════
+EVENT_EXTRA = {
+    'kinder': ['g02', 'p/magic02'],
+    'school': ['p/school09', 'p/school16', 'p/school22'],
+    'corp': ['p/gov01', 'p/gov03', 'p/corp02'],
+    'local': ['p/univ01', 'p/univ02', 'p/univ05'],
+    'church': ['p/church21', 'p/church10', 'p/church14'],
+}
+
+
+def thumbs(code_list):
+    out = ''
+    for cd in code_list:
+        w = W(cd) if any(x[0] == cd for x in WORKS) else None
+        alt = w[1] if w else '행사 현장'
+        out += f'<img src="assets/img/{cd}.webp" alt="{esc(alt)}" loading="lazy" decoding="async">'
+    return f'<div class="thumbs rv">{out}</div>'
+
+
 def build_event():
     tabs = ''.join(f'<a href="#{c["id"]}">{c["name"]}</a>' for c in EVENT_CATS)
     blocks = ''
     for i, c in enumerate(EVENT_CATS):
         if c['img']:
-            ph = f'<div class="ph rv"><img src="assets/img/{c["img"]}.webp" alt="{esc(c["alt"])}" loading="lazy" decoding="async"></div>'
+            ph = f'<div class="phw"><div class="ph rv"><img src="assets/img/{c["img"]}.webp" alt="{esc(c["alt"])}" loading="lazy" decoding="async"></div>{thumbs(EVENT_EXTRA.get(c["id"], []))}</div>'
         else:
             ph = f'<div class="ph pending rv" style="background:linear-gradient(160deg,{c["c"]},#fff)"><div><img src="assets/img/logo-mark.png" alt="" style="width:84px;margin:0 auto 14px"><b style="font-size:18px;color:var(--ink)">축제 현장 사진을 준비하고 있어요</b><br>행사 사진이 정리되는 대로 이 자리에 실립니다.</div></div>'
         chips = ''.join(f'<li>{esc(p)}</li>' for p in c['prog'])
@@ -483,11 +540,19 @@ def build_edu():
     cards = ''.join(
         f'''<article class="edu rv d{i % 3 + 1}" style="--c:{e["c"]}"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true">{ICONS[e["ic"]]}</svg></div><h3>{e["n"]}</h3><span class="tg">대상 {e["who"]}</span><p>{e["t"]}</p><div class="fx"><span>기대효과</span>{e["fx"]}</div>{btn("contact.html?type=" + "교육" + "#form", "교육 문의", "line sm")}</article>'''
         for i, e in enumerate(EDU))
+    vids = ''.join(f'<figure class="vid rv d{i % 3 + 1}"><video controls preload="none" playsinline poster="assets/video/sci-v{i + 1}.jpg" aria-label="과학실험 마술수업 영상 {i + 1}"><source src="assets/video/sci-v{i + 1}.mp4" type="video/mp4"></video></figure>' for i in range(5))
+    cgal = ''.join(gal_fig(W(cd), cls) for cd, cls in [('p/sci01', 'w t'), ('p/sci07', ''), ('p/sci08', ''), ('p/sci04', 'w'), ('p/sci10', ''), ('p/sci06', '')])
     body = phead('교육', 'EDUCATION', '교육으로<br><span class="hl-l">사람을 키웁니다</span>',
                  '심리치료상담을 전공한 소장이 직접 설계한 프로그램으로, 자신의 감정을 이해하고, 함께 소통하고, 스스로의 길을 찾아가도록 돕습니다. 즐거운 활동 속에서 배우기 때문에 오래 기억에 남습니다.') + f'''
 <section class="sec"><div class="wrap">
   <div class="sechead"><div><span class="eb lime"><i></i>PROGRAMS</span><h2 class="h2 rv">교육 <span class="hl">프로그램</span> 6가지</h2></div></div>
   <div class="edugrid">{cards}</div>
+</div></section>
+<section class="sec sand" id="class"><div class="wrap">
+  <div class="sechead"><div><span class="eb"><i></i>CLASS</span><h2 class="h2 rv">수업 <span class="hl-l">현장</span></h2></div>
+    <p class="lead rv" style="margin:0">과학실험 마술수업 현장입니다. 실험을 눈앞에서 보고, 아이들이 함께 참여합니다.</p></div>
+  <div class="vids">{vids}</div>
+  <div class="gal rv" style="margin-top:22px">{cgal}</div>
 </div></section>
 <section class="sec dark"><div class="wrap">
   <span class="eb"><i></i>COURSE</span><h2 class="h2 rv">회차는 <span class="hl-l">필요에 맞게</span></h2>
@@ -502,11 +567,11 @@ def build_edu():
 
 # ════════════════════════ 포트폴리오 ════════════════════════
 def build_portfolio():
-    cats_with = {w[3] for w in WORKS}
+    cats_with = {c for w in WORKS for c in w[3].split()}
     filt = ''.join(f'<button data-f="{k}" aria-pressed="{"true" if k == "all" else "false"}">{n}</button>' for k, n in PF_FILTERS if k == 'all' or k in cats_with)
     catname = dict((k, n) for k, n in PF_FILTERS)
     figs = ''.join(
-        f'<figure data-c="{w[3]}" data-t="{esc(w[1])}"><div class="im"><img src="assets/img/{w[0]}.webp" alt="{esc(w[1])}" loading="lazy" decoding="async"></div><figcaption><b>{esc(w[1])}</b><span>{catname[w[3]]}{" · " + esc(w[2]) if w[2] else ""}</span></figcaption></figure>'
+        f'<figure data-c="{w[3]}" data-t="{esc(w[1])}"><div class="im"><img src="assets/img/{w[0]}.webp" alt="{esc(w[1])}" loading="lazy" decoding="async"></div><figcaption><b>{esc(w[1])}</b><span>{catname[w[3].split()[0]]}{" · " + esc(w[2]) if w[2] else ""}</span></figcaption></figure>'
         for w in WORKS)
     regs = ''.join(
         f'<details class="rv"><summary>{esc(r["region"])}<small>{esc(r["count"])}</small></summary><ul>' + ''.join(f'<li>{esc(a)}<small>{esc(b)}</small></li>' for a, b in r['schools']) + '</ul></details>'
@@ -518,11 +583,17 @@ def build_portfolio():
 <section class="sec" style="padding-top:40px"><div class="wrap">
   <div class="filters" role="group" aria-label="분류">{filt}</div>
   <div class="pf">{figs}</div>
+  <div style="text-align:center;margin-top:28px"><button class="btn line" id="pfMore" type="button" hidden>사진 더 보기<span class="ar">{ARROW}</span></button></div>
   <div class="empty" id="pfEmpty" hidden>이 분류의 사진을 준비하고 있어요.</div>
   <p class="lead" style="margin-top:26px">더 많은 현장 사진은 <a href="{NBLOG}" target="_blank" rel="noopener" style="color:var(--coral-ink);font-weight:700">네이버 블로그</a>에서 보실 수 있어요.</p>
 </div></section>
 
-<section class="sec sand" id="record"><div class="wrap">
+<section class="sec sand" id="video"><div class="wrap">
+  <div class="sechead"><div><span class="eb lime"><i></i>VIDEO</span><h2 class="h2 rv">현장 <span class="hl">영상</span></h2></div></div>
+  <div class="vids one"><figure class="vid rv"><video controls preload="none" playsinline poster="assets/video/magic-v1.jpg" aria-label="마술 공연 영상"><source src="assets/video/magic-v1.mp4" type="video/mp4"></video><figcaption>마술 공연 현장</figcaption></figure></div>
+</div></section>
+
+<section class="sec" id="record"><div class="wrap">
   <div class="sechead"><div><span class="eb lime"><i></i>TRACK RECORD</span><h2 class="h2 rv">해마다 다시 <span class="hl">불러주시는</span> 학교들</h2></div>
     <p class="lead rv" style="margin:0">2011년부터 운동회를 맡겨주신 학교 94곳입니다. 숫자는 진행 연도예요.</p></div>
   <div class="regions">{regs}</div>

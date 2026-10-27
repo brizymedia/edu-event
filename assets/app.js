@@ -83,19 +83,29 @@
   var tr = $('.ticker .tr'); if (tr) tr.innerHTML += tr.innerHTML;
 
   /* ── 포트폴리오: 필터 + 확대 ── */
-  var pf = $('.pf'), figs = [];
-  function applyFilter(b) {
-    var f = b.getAttribute('data-f'), cnt = 0, emp = $('#pfEmpty');
-    $$('.filters button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+  var pf = $('.pf'), figs = [], PAGE = 18, shown = PAGE, curF = 'all';
+  function paint() {
+    var more = $('#pfMore'), emp = $('#pfEmpty'), n = 0, total = 0;
     figs = $$('figure', pf);
-    figs.forEach(function (fg) { var ok = f === 'all' || (fg.getAttribute('data-c') || '').split(' ').indexOf(f) > -1; fg.hidden = !ok; if (ok) cnt++; });
-    if (emp) emp.hidden = cnt > 0;
-    history.replaceState(null, '', f === 'all' ? location.pathname : '#' + f);
+    figs.forEach(function (fg) {
+      var ok = curF === 'all' || (fg.getAttribute('data-c') || '').split(' ').indexOf(curF) > -1;
+      if (!ok) { fg.hidden = true; fg.classList.remove('later'); return; }
+      total++; fg.hidden = false; fg.classList.toggle('later', n >= shown); n++;
+    });
+    if (more) more.hidden = total <= shown;
+    if (emp) emp.hidden = total > 0;
+  }
+  function applyFilter(b) {
+    curF = b.getAttribute('data-f'); shown = PAGE;
+    $$('.filters button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+    paint();
+    history.replaceState(null, '', curF === 'all' ? location.pathname : '#' + curF);
   }
   function bindFilter(b) { b.addEventListener('click', function () { applyFilter(b); }); }
   if (pf) {
     $$('.filters button').forEach(bindFilter);
-    var h0 = (location.hash || '').slice(1), b0 = h0 && $('.filters button[data-f="' + h0 + '"]'); if (b0) applyFilter(b0);
+    var mb = $('#pfMore'); if (mb) mb.addEventListener('click', function () { shown += PAGE; paint(); });
+    var h0 = (location.hash || '').slice(1), b0 = h0 && $('.filters button[data-f="' + h0 + '"]'); if (b0) applyFilter(b0); else paint();
   }
   /* 대표님이 upload.html 로 올린 사진(photos 가지의 photos.json)을 포트폴리오 앞에 붙인다 */
   var UP_LIST = 'https://raw.githubusercontent.com/brizymedia/edu-event/photos/photos/photos.json';
@@ -111,7 +121,7 @@
         html += '<figure data-c="' + cat + '" data-t="' + esc(t) + '"><div class="im"><img src="' + src + '" alt="' + esc(t) + '" loading="lazy" decoding="async"></div><figcaption><b>' + esc(t) + '</b><span>' + UP_CAT[cat] + (x.place ? ' · ' + esc(x.place) : '') + (x.date ? ' · ' + esc(x.date) : '') + '</span></figcaption></figure>';
         if (chips && !$('button[data-f="' + cat + '"]', chips)) { var b = d.createElement('button'); b.setAttribute('data-f', cat); b.setAttribute('aria-pressed', 'false'); b.textContent = UP_CAT[cat]; chips.appendChild(b); bindFilter(b); }
       });
-      pf.insertAdjacentHTML('afterbegin', html); figs = $$('figure', pf);
+      pf.insertAdjacentHTML('afterbegin', html); paint();
     }).catch(function () { });
   }
   var lb = $('.lb');
