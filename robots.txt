@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /
 
-Sitemap: https://brizymedia.github.io/edu-event/sitemap.xml
+Sitemap: https://www.event-edu.co.kr/sitemap.xml

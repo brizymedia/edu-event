@@ -24,22 +24,22 @@
 - 진로탐색 강의 (초중고): 나의 흥미와 강점을 발견하고, 꿈을 구체적인 계획으로 연결합니다. 기대효과: 자기이해, 진로 설계
 
 ## 페이지
-- https://brizymedia.github.io/edu-event/about.html 회사 소개 · 비전 · 핵심 가치
-- https://brizymedia.github.io/edu-event/ceo.html 대표 소개
-- https://brizymedia.github.io/edu-event/event.html 행사
-- https://brizymedia.github.io/edu-event/education.html 교육
-- https://brizymedia.github.io/edu-event/portfolio.html 포트폴리오 · 후기 · 운동회 실적 학교 94곳
-- https://brizymedia.github.io/edu-event/contact.html 견적 문의
+- https://www.event-edu.co.kr/about.html 회사 소개 · 비전 · 핵심 가치
+- https://www.event-edu.co.kr/ceo.html 대표 소개
+- https://www.event-edu.co.kr/event.html 행사
+- https://www.event-edu.co.kr/education.html 교육
+- https://www.event-edu.co.kr/portfolio.html 포트폴리오 · 후기 · 운동회 실적 학교 94곳
+- https://www.event-edu.co.kr/contact.html 견적 문의
 
 ## 블로그 (행사 준비 체크리스트 · 교육 이야기)
-- [블로그 목록](https://brizymedia.github.io/edu-event/blog/)
-- [감정교육 프로그램이란 — 놀이로 배우는 마음 읽기와 도입 전 확인할 것](https://brizymedia.github.io/edu-event/blog/%EA%B0%90%EC%A0%95%EA%B5%90%EC%9C%A1-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-%EB%86%80%EC%9D%B4%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EB%A7%88%EC%9D%8C-%EC%9D%BD%EA%B8%B0/): 감정교육 프로그램이 무엇을 하는지, 놀이로 마음 읽기를 배우는 수업이 어떻게 구성되는지, 유치원 · 초등학교에서 도입하기 전에 확인할 것을 정리했습니다.
-- [과학실험 마술수업 도입 전 확인할 것 — 마술 속 과학 원리와 안전](https://brizymedia.github.io/edu-event/blog/%EA%B3%BC%ED%95%99%EC%8B%A4%ED%97%98-%EB%A7%88%EC%88%A0%EC%88%98%EC%97%85-%EB%8F%84%EC%9E%85-%EC%A0%84-%ED%99%95%EC%9D%B8%ED%95%A0-%EA%B2%83/): 과학실험 마술수업을 도입하려는 유치원 · 초등학교 선생님을 위한 글입니다. 마술 속 과학 원리를 수업으로 푸는 방식, 안전 · 재료 확인, 수업 구성, 도입 전 점검표를 정리했습니다.
-- [기업체 체육대회 팀빌딩 준비 순서 — 장소 · 종목 · 팀 구성 · 날씨 대비](https://brizymedia.github.io/edu-event/blog/%EA%B8%B0%EC%97%85%EC%B2%B4-%EC%B2%B4%EC%9C%A1%EB%8C%80%ED%9A%8C-%ED%8C%80%EB%B9%8C%EB%94%A9-%EB%A0%88%ED%81%AC%EB%A6%AC%EC%97%90%EC%9D%B4%EC%85%98-%EC%A4%80%EB%B9%84-%EC%88%9C%EC%84%9C/): 기업체 체육대회 팀빌딩을 준비하는 총무 · 인사 담당자를 위한 글입니다. 목적 정하기부터 장소, 종목, 팀 편성, 시간표, 폭염 · 강풍 대비까지 준비 순서를 체크리스트로 정리했습니다.
-- [발표 두려움 줄이는 발표회 수업 — 한 문장 말하기부터 무대까지](https://brizymedia.github.io/edu-event/blog/%EB%B0%9C%ED%91%9C-%EB%91%90%EB%A0%A4%EC%9B%80-%EC%A4%84%EC%9D%B4%EB%8A%94-%EB%B0%9C%ED%91%9C%ED%9A%8C-%EC%88%98%EC%97%85/): 발표 두려움 줄이는 발표회 수업을 계획하는 선생님을 위한 글입니다. 한 문장 말하기부터 무대 발표까지 단계별 구성, 발표회 운영 방법, 교사가 지킬 말하기 원칙을 정리했습니다.
-- [어린이 매직쇼 버블쇼 공연 고를 때 확인할 것 — 강당 조건부터 안전까지](https://brizymedia.github.io/edu-event/blog/%EC%96%B4%EB%A6%B0%EC%9D%B4-%EB%A7%A4%EC%A7%81%EC%87%BC-%EB%B2%84%EB%B8%94%EC%87%BC-%EA%B3%B5%EC%97%B0-%EA%B3%A0%EB%A5%BC-%EB%95%8C-%ED%99%95%EC%9D%B8%ED%95%A0-%EA%B2%83/): 어린이 매직쇼 버블쇼 공연을 고르는 유치원 · 학교 · 교회 담당자를 위한 글입니다. 강당 조건, 연령별 구성, 안전, 공연 전 협의 항목을 점검표로 정리했습니다.
-- [어린이날 체험부스 운영 기준 — 에어바운스 안전과 동선 점검표](https://brizymedia.github.io/edu-event/blog/%EC%96%B4%EB%A6%B0%EC%9D%B4%EB%82%A0-%EC%B2%B4%ED%97%98%EB%B6%80%EC%8A%A4-%EC%97%90%EC%96%B4%EB%B0%94%EC%9A%B4%EC%8A%A4-%EC%9A%B4%EC%98%81-%EA%B8%B0%EC%A4%80/): 어린이날 체험부스 운영을 맡은 기관 · 단체 담당자를 위한 글입니다. 부스 배치와 대기 줄 동선, 에어바운스 안전 확인 항목, 강풍 대비 기준을 점검표로 정리했습니다.
-- [유치원 운동회 프로그램 고르는 법 — 어린이집도 함께 보는 기준](https://brizymedia.github.io/edu-event/blog/%EC%9C%A0%EC%B9%98%EC%9B%90-%EC%96%B4%EB%A6%B0%EC%9D%B4%EC%A7%91-%EC%9A%B4%EB%8F%99%ED%9A%8C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-%EA%B3%A0%EB%A5%B4%EB%8A%94-%EB%B2%95/): 유치원 운동회 프로그램을 고르는 원장님 · 선생님을 위한 글입니다. 반별 구성, 짧은 시간표, 보호자 참여, 안전 점검, 대체 프로그램까지 고르는 기준을 정리했습니다.
-- [직업체험 진로탐색 강의 설계 — 체험에서 나의 계획까지 이어 가는 순서](https://brizymedia.github.io/edu-event/blog/%EC%A7%81%EC%97%85%EC%B2%B4%ED%97%98-%EC%A7%84%EB%A1%9C%ED%83%90%EC%83%89-%EA%B0%95%EC%9D%98-%EC%84%A4%EA%B3%84/): 직업체험 진로탐색 강의를 설계하는 선생님을 위한 글입니다. 직업 소개, 체험, 돌아보기, 흥미와 강점 찾기, 계획 세우기를 학교급별로 이어 가는 구성과 도입 전 점검표를 정리했습니다.
-- [초등학교 운동회 준비 체크리스트 — 종목 · 안전 · 음향 · 우천 대비](https://brizymedia.github.io/edu-event/blog/%EC%B4%88%EB%93%B1%ED%95%99%EA%B5%90-%EC%9A%B4%EB%8F%99%ED%9A%8C-%EC%A4%80%EB%B9%84-%EC%B2%B4%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EC%A2%85%EB%AA%A9-%EC%95%88%EC%A0%84-%EC%9D%8C%ED%96%A5-%EC%9A%B0%EC%B2%9C-%EB%8C%80%EB%B9%84/): 초등학교 운동회 준비를 맡은 선생님을 위한 체크리스트입니다. 학년별 종목 구성, 안전 인력 배치, 음향 점검, 우천 · 강풍 · 폭염 대비를 순서대로 정리했습니다.
-- [학급 임원 리더십 교육 구성 — 소통 · 책임감 · 협력을 활동으로 배우기](https://brizymedia.github.io/edu-event/blog/%ED%95%99%EA%B8%89-%ED%95%99%EC%83%9D%ED%9A%8C-%EC%9E%84%EC%9B%90-%EB%A6%AC%EB%8D%94%EC%8B%AD-%EA%B5%90%EC%9C%A1-%EA%B5%AC%EC%84%B1/): 학급 임원 리더십 교육을 계획하는 선생님을 위한 글입니다. 학생회 임원 수업의 목표, 활동 중심 구성표, 회의 · 역할극 활동 예, 도입 전 확인할 것을 정리했습니다.
+- [블로그 목록](https://www.event-edu.co.kr/blog/)
+- [감정교육 프로그램이란 — 놀이로 배우는 마음 읽기와 도입 전 확인할 것](https://www.event-edu.co.kr/blog/%EA%B0%90%EC%A0%95%EA%B5%90%EC%9C%A1-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-%EB%86%80%EC%9D%B4%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EB%A7%88%EC%9D%8C-%EC%9D%BD%EA%B8%B0/): 감정교육 프로그램이 무엇을 하는지, 놀이로 마음 읽기를 배우는 수업이 어떻게 구성되는지, 유치원 · 초등학교에서 도입하기 전에 확인할 것을 정리했습니다.
+- [과학실험 마술수업 도입 전 확인할 것 — 마술 속 과학 원리와 안전](https://www.event-edu.co.kr/blog/%EA%B3%BC%ED%95%99%EC%8B%A4%ED%97%98-%EB%A7%88%EC%88%A0%EC%88%98%EC%97%85-%EB%8F%84%EC%9E%85-%EC%A0%84-%ED%99%95%EC%9D%B8%ED%95%A0-%EA%B2%83/): 과학실험 마술수업을 도입하려는 유치원 · 초등학교 선생님을 위한 글입니다. 마술 속 과학 원리를 수업으로 푸는 방식, 안전 · 재료 확인, 수업 구성, 도입 전 점검표를 정리했습니다.
+- [기업체 체육대회 팀빌딩 준비 순서 — 장소 · 종목 · 팀 구성 · 날씨 대비](https://www.event-edu.co.kr/blog/%EA%B8%B0%EC%97%85%EC%B2%B4-%EC%B2%B4%EC%9C%A1%EB%8C%80%ED%9A%8C-%ED%8C%80%EB%B9%8C%EB%94%A9-%EB%A0%88%ED%81%AC%EB%A6%AC%EC%97%90%EC%9D%B4%EC%85%98-%EC%A4%80%EB%B9%84-%EC%88%9C%EC%84%9C/): 기업체 체육대회 팀빌딩을 준비하는 총무 · 인사 담당자를 위한 글입니다. 목적 정하기부터 장소, 종목, 팀 편성, 시간표, 폭염 · 강풍 대비까지 준비 순서를 체크리스트로 정리했습니다.
+- [발표 두려움 줄이는 발표회 수업 — 한 문장 말하기부터 무대까지](https://www.event-edu.co.kr/blog/%EB%B0%9C%ED%91%9C-%EB%91%90%EB%A0%A4%EC%9B%80-%EC%A4%84%EC%9D%B4%EB%8A%94-%EB%B0%9C%ED%91%9C%ED%9A%8C-%EC%88%98%EC%97%85/): 발표 두려움 줄이는 발표회 수업을 계획하는 선생님을 위한 글입니다. 한 문장 말하기부터 무대 발표까지 단계별 구성, 발표회 운영 방법, 교사가 지킬 말하기 원칙을 정리했습니다.
+- [어린이 매직쇼 버블쇼 공연 고를 때 확인할 것 — 강당 조건부터 안전까지](https://www.event-edu.co.kr/blog/%EC%96%B4%EB%A6%B0%EC%9D%B4-%EB%A7%A4%EC%A7%81%EC%87%BC-%EB%B2%84%EB%B8%94%EC%87%BC-%EA%B3%B5%EC%97%B0-%EA%B3%A0%EB%A5%BC-%EB%95%8C-%ED%99%95%EC%9D%B8%ED%95%A0-%EA%B2%83/): 어린이 매직쇼 버블쇼 공연을 고르는 유치원 · 학교 · 교회 담당자를 위한 글입니다. 강당 조건, 연령별 구성, 안전, 공연 전 협의 항목을 점검표로 정리했습니다.
+- [어린이날 체험부스 운영 기준 — 에어바운스 안전과 동선 점검표](https://www.event-edu.co.kr/blog/%EC%96%B4%EB%A6%B0%EC%9D%B4%EB%82%A0-%EC%B2%B4%ED%97%98%EB%B6%80%EC%8A%A4-%EC%97%90%EC%96%B4%EB%B0%94%EC%9A%B4%EC%8A%A4-%EC%9A%B4%EC%98%81-%EA%B8%B0%EC%A4%80/): 어린이날 체험부스 운영을 맡은 기관 · 단체 담당자를 위한 글입니다. 부스 배치와 대기 줄 동선, 에어바운스 안전 확인 항목, 강풍 대비 기준을 점검표로 정리했습니다.
+- [유치원 운동회 프로그램 고르는 법 — 어린이집도 함께 보는 기준](https://www.event-edu.co.kr/blog/%EC%9C%A0%EC%B9%98%EC%9B%90-%EC%96%B4%EB%A6%B0%EC%9D%B4%EC%A7%91-%EC%9A%B4%EB%8F%99%ED%9A%8C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-%EA%B3%A0%EB%A5%B4%EB%8A%94-%EB%B2%95/): 유치원 운동회 프로그램을 고르는 원장님 · 선생님을 위한 글입니다. 반별 구성, 짧은 시간표, 보호자 참여, 안전 점검, 대체 프로그램까지 고르는 기준을 정리했습니다.
+- [직업체험 진로탐색 강의 설계 — 체험에서 나의 계획까지 이어 가는 순서](https://www.event-edu.co.kr/blog/%EC%A7%81%EC%97%85%EC%B2%B4%ED%97%98-%EC%A7%84%EB%A1%9C%ED%83%90%EC%83%89-%EA%B0%95%EC%9D%98-%EC%84%A4%EA%B3%84/): 직업체험 진로탐색 강의를 설계하는 선생님을 위한 글입니다. 직업 소개, 체험, 돌아보기, 흥미와 강점 찾기, 계획 세우기를 학교급별로 이어 가는 구성과 도입 전 점검표를 정리했습니다.
+- [초등학교 운동회 준비 체크리스트 — 종목 · 안전 · 음향 · 우천 대비](https://www.event-edu.co.kr/blog/%EC%B4%88%EB%93%B1%ED%95%99%EA%B5%90-%EC%9A%B4%EB%8F%99%ED%9A%8C-%EC%A4%80%EB%B9%84-%EC%B2%B4%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EC%A2%85%EB%AA%A9-%EC%95%88%EC%A0%84-%EC%9D%8C%ED%96%A5-%EC%9A%B0%EC%B2%9C-%EB%8C%80%EB%B9%84/): 초등학교 운동회 준비를 맡은 선생님을 위한 체크리스트입니다. 학년별 종목 구성, 안전 인력 배치, 음향 점검, 우천 · 강풍 · 폭염 대비를 순서대로 정리했습니다.
+- [학급 임원 리더십 교육 구성 — 소통 · 책임감 · 협력을 활동으로 배우기](https://www.event-edu.co.kr/blog/%ED%95%99%EA%B8%89-%ED%95%99%EC%83%9D%ED%9A%8C-%EC%9E%84%EC%9B%90-%EB%A6%AC%EB%8D%94%EC%8B%AD-%EA%B5%90%EC%9C%A1-%EA%B5%AC%EC%84%B1/): 학급 임원 리더십 교육을 계획하는 선생님을 위한 글입니다. 학생회 임원 수업의 목표, 활동 중심 구성표, 회의 · 역할극 활동 예, 도입 전 확인할 것을 정리했습니다.

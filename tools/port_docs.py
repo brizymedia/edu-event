@@ -26,7 +26,7 @@ ADDR_S   = '인천광역시 남동구 문화서로 62번길 17'
 TEL      = '010-9189-5589'
 EMAIL    = 'ihaha2040@gmail.com'
 REPO     = 'brizymedia/edu-event'
-HOME     = 'https://brizymedia.github.io/edu-event'  # 도메인을 정하면 바꾸고 다시 실행
+HOME     = 'https://www.event-edu.co.kr'  # 도메인을 정하면 바꾸고 다시 실행
 CODE_PRE = 'EE-'                                    # 계약 번호 앞글자
 BLOG     = 'https://blog.naver.com/event_edu'
 
