@@ -423,6 +423,9 @@ def port_servers():
                   "    // 서명본 사본을 항상 받을 주소 (계약서의 co.email 과 별개로 무조건 수신)\nconst MANAGER_EMAIL    = 'gilauto325@gmail.com'; // 관리하는 큰길브리지도 사본을 받는다 (빼려면 '' )\n", 1)
     c = c.replace('형님과 직원이', '대표님과 직원이').replace('형님 암호(BOX_PW)', '대표님 암호(BOX_PW)')
     assert 'MANAGER_EMAIL    =' in c, '계약 서버: MANAGER_EMAIL 넣을 자리를 못 찾음'
+    # 보낸 견적 메일 모으기: 큰길 견적 메일([큰길이벤트기획] …)이 이 회사 저장함에 섞이지 않게 제목 머리를 이 회사로 (2026-11-06 어대리 발견 — 같은 gilauto325 계정에서 돈다)
+    c = c.replace('/^\[큰길이벤트기획\]/', '/^\[' + NAME + '\]/').replace('「[큰길이벤트기획] … 견적서」', '「[' + NAME + '] … 견적서」')
+    assert '[큰길이벤트기획\]' not in c, '계약 서버: 큰길 견적 메일 거르는 조건이 남음'
     write('apps-script/contract/Code.gs', c)
     g = open(os.path.join(SRC, 'apps-script/gallery/Code.gs'), encoding='utf-8').read()
     g = rep(g, [
