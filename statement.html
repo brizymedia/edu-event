@@ -227,7 +227,7 @@ const unb64 = (s) => { let t = String(s).replace(/-/g,'+').replace(/_/g,'/'); wh
 function toast(m){ const t = $('#toast'); t.textContent = m; t.classList.add('on'); clearTimeout(toast.t); toast.t = setTimeout(()=>t.classList.remove('on'), 2400); }
 
 const 우리 = { name:'이벤트와 교육연구소', brand:'이벤트와 교육연구소', rep:'황윤수', biz:'578-03-01411',
-  addr:'인천광역시 남동구 문화서로 62번길 17, 3층 302호', tel:'010-9189-5589', email:'ihaha2040@gmail.com' };
+  addr:'인천광역시 남동구 문화서로 62번길 17, 3층 302호', tel:'010-9189-5589', email:'ihahanara@gmail.com' };
 const 기본계좌 = '';
 
 const 새번호 = () => 'EE-' + 오늘().replace(/-/g,'') + '-' + Math.random().toString(36).slice(2,5).toUpperCase();

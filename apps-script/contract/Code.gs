@@ -26,7 +26,7 @@
 const ROOT_FOLDER_NAME = '이벤트와 교육연구소 계약서';   // 내 드라이브에 자동 생성
 const SHEET_NAME       = '계약 대장';               // 루트 폴더 안에 자동 생성되는 스프레드시트 이름
 const COMPANY_NAME     = '이벤트와 교육연구소';
-const COMPANY_EMAIL    = 'ihaha2040@gmail.com';    // 서명본 사본을 항상 받을 주소 (계약서의 co.email 과 별개로 무조건 수신)
+const COMPANY_EMAIL    = 'ihahanara@gmail.com';    // 서명본 사본을 항상 받을 주소 (계약서의 co.email 과 별개로 무조건 수신)
 const MANAGER_EMAIL    = 'gilauto325@gmail.com'; // 관리하는 큰길브리지도 사본을 받는다 (빼려면 '' )
 const ALLOW_RESIGN     = false;                     // true 면 이미 서명된 계약에 다시 서명 허용
 const BOX_FILE         = '견적서-보관함.json';       // 보관함 파일 (위 폴더의 _data 안)

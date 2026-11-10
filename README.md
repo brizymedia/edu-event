@@ -37,7 +37,7 @@ python -m http.server 8820 --directory C:/Users/gilau/Documents/edu-event
 
 - 상호 이벤트와 교육연구소 · 대표(소장) 황윤수 · 사업자등록번호 578-03-01411 · 인천광역시 남동구 문화서로 62번길 17, 3층 302호
 - 계약 담당(서명자) 김필선 010-6342-5309 · filsun@naver.com
-- **사이트에 넣은 전화 010-9189-5589 · 메일 ihaha2040@gmail.com 은 기존 시안(`index.html`)에 있던 대표 번호 · 메일이다.** 계약서의 담당자 번호와 다르니 대표 확인 필요.
+- **사이트에 넣은 전화 010-9189-5589 · 메일 ihahanara@gmail.com 은 기존 시안(`index.html`)에 있던 대표 번호 · 메일이다.** 계약서의 담당자 번호와 다르니 대표 확인 필요.
 - 카카오톡 채널 pf.kakao.com/_XVrSs · 네이버 블로그 blog.naver.com/event_edu (기존 시안 기준)
 - 로고 2종(아치형 · 가로형)은 받은 PNG 를 `assets/img/logo-arch.png` · `logo-h.png` 로 변환. 웃는 얼굴 마크는 가로형에서 잘라 `favicon.png` · `logo-mark.png`. 어두운 바탕용 `logo-h-white.png`.
 
