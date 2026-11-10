@@ -316,8 +316,8 @@ def build_index():
   <div class="sechead"><div><span class="eb lime"><i></i>BY THE NUMBERS</span><h2 class="h2 rv">숫자로 보는 <span class="hl">연구소</span></h2></div>
     <p class="lead rv" style="margin:0">운동장에서 강당까지, 같은 학교가 다시 불러주는 이유를 숫자로 담았습니다.</p></div>
   <div class="stats">
-    <div class="stat rv d1"><em class="tt">행사 경력</em><b data-n="20">0<small>년</small></b></div>
-    <div class="stat rv d2"><em class="tt">2011년부터 레크리에이션을 맡긴 학교</em><b data-n="94">0<small>곳</small></b></div>
+    <div class="stat rv d1"><em class="tt">행사 경력</em><b data-n="20">0<small>년</small></b><span>무대와 현장에서 쌓아 온 시간</span><small class="sub">운동회 · 레크리에이션 · 매직쇼</small></div>
+    <div class="stat rv d2"><em class="tt">2011년부터 레크리에이션을 맡긴 학교</em><b data-n="94">0<small>곳</small></b><span>해마다 다시 불러주시는 학교들</span><small class="sub">서울 45 · 경기 37 · 인천 9 · 그 외 3</small></div>
     <div class="stat rv d3"><em class="tt">대상별 행사</em><b data-n="5">0<small>개 분야</small></b><span>유치원부터 기업까지, 대상별 맞춤 행사</span><small class="sub">유치원 · 학교 · 기업 · 지자체 · 교회</small></div>
     <div class="stat rv d4"><em class="tt">교육 프로그램</em><b data-n="6">0<small>가지</small></b><span>직접 기획한 교육 프로그램</span><small class="sub">임원리더십 · 진로 · 과학 등</small></div>
   </div>
