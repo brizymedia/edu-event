@@ -26,7 +26,7 @@ KAKAO = 'http://pf.kakao.com/_XVrSs/chat'
 NBLOG = 'https://blog.naver.com/event_edu'
 BASE = 'https://www.event-edu.co.kr'   # 도메인을 정하면 여기만 바꾸고 다시 실행 (계약: 도메인 오픈 시점에 협의)
 NOINDEX = True                               # 오픈 확정 뒤 False 로 바꾸고 다시 실행
-VER = '3'
+VER = '4'
 EDIT_HASH = '15537d4153185a776f0e6b1512f411d17593a40ebf0d3bc5a89f6ae8cffa6c4c'   # 사장님 직접 수정 열쇠의 sha256 (열쇠 자체는 어디에도 적지 않는다)
 OG = BASE + '/assets/img/og.jpg'
 MAP = 'https://map.naver.com/p/search/' + '%EC%9D%B8%EC%B2%9C%EA%B4%91%EC%97%AD%EC%8B%9C%20%EB%82%A8%EB%8F%99%EA%B5%AC%20%EB%AC%B8%ED%99%94%EC%84%9C%EB%A1%9C62%EB%B2%88%EA%B8%B8%2017'
@@ -95,15 +95,18 @@ PHOTO_SETS = [   # (접두어, 장수, 제목, 분류)
     ('gov', 5, '관공서 체육대회', 'corp gov'),
     ('corp', 4, '기업 레크리에이션', 'corp'),
     ('univ', 6, '대학 축제 공연', 'local'),
+    ('lead', 5, '초등학교 임원 리더십 교육', 'edu'),   # 2025-03-18, 2026-11-23 받은 자료
+    ('air', 7, '항공고등학교 진로체험', 'edu'),        # 2022-07-26, 2026-11-23 받은 자료
 ]
+PHOTO_YEAR = {'lead': '2025', 'air': '2022'}
 WORKS_NEW = {}
 for _pre, _n, _t, _c in PHOTO_SETS:
-    WORKS_NEW[_pre] = [('p/%s%02d' % (_pre, i), _t, '', _c, '') for i in range(1, _n + 1)]
+    WORKS_NEW[_pre] = [('p/%s%02d' % (_pre, i), _t, PHOTO_YEAR.get(_pre, ''), _c, '') for i in range(1, _n + 1)]
 
 
 def _mix():
     """분류별로 번갈아 섞어서 「전체」에서도 다양하게 보이게 한다."""
-    order = ['school', 'sci', 'church', 'univ', 'corp', 'magic', 'gov']
+    order = ['school', 'lead', 'sci', 'church', 'univ', 'corp', 'air', 'magic', 'gov']
     out, i = [], 0
     while any(WORKS_NEW[k][i:i + 1] for k in order):
         for k in order:
@@ -335,7 +338,7 @@ def build_index():
       {btn("event.html", "행사 자세히 보기", "coral")}
     </div></article>
     <article class="bz part ed rv d2"><div class="in">
-      <div class="ph"><img src="assets/img/p/sci01.webp" alt="유치원 아이들이 지켜보는 과학실험 수업" loading="lazy" decoding="async"></div>
+      <div class="ph"><img src="assets/img/p/lead03.webp" alt="강당에 모인 초등학생들과 함께하는 임원 리더십 교육" loading="lazy" decoding="async"></div>
       <span class="eb lime"><i></i>EDUCATION</span>
       <h3>성장을 교육합니다</h3>
       <p>심리치료상담을 전공한 소장이 직접 설계한 프로그램으로, 자신의 감정을 이해하고 함께 소통하고 스스로의 길을 찾아가도록 돕습니다. 즐거운 활동 속에서 배우기 때문에 오래 기억에 남습니다.</p>
@@ -541,7 +544,8 @@ def build_edu():
         f'''<article class="edu rv d{i % 3 + 1}" style="--c:{e["c"]}"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true">{ICONS[e["ic"]]}</svg></div><h3>{e["n"]}</h3><span class="tg">대상 {e["who"]}</span><p>{e["t"]}</p><div class="fx"><span>기대효과</span>{e["fx"]}</div>{btn("contact.html?type=" + "교육" + "#form", "교육 문의", "line sm")}</article>'''
         for i, e in enumerate(EDU))
     vids = ''.join(f'<figure class="vid rv d{i % 3 + 1}"><video controls preload="none" playsinline poster="assets/video/sci-v{i + 1}.jpg" aria-label="과학실험 마술수업 영상 {i + 1}"><source src="assets/video/sci-v{i + 1}.mp4" type="video/mp4"></video></figure>' for i in range(5))
-    cgal = ''.join(gal_fig(W(cd), cls) for cd, cls in [('p/sci01', 'w t'), ('p/sci07', ''), ('p/sci08', ''), ('p/sci04', 'w'), ('p/sci10', ''), ('p/sci06', '')])
+    vids = '<figure class="vid rv"><video controls preload="none" playsinline poster="assets/video/lead-v1.jpg" aria-label="임원 리더십 교육 영상"><source src="assets/video/lead-v1.mp4" type="video/mp4"></video></figure>' + vids
+    cgal = ''.join(gal_fig(W(cd), cls) for cd, cls in [('p/lead01', ''), ('p/lead03', ''), ('p/lead04', ''), ('p/sci01', ''), ('p/sci10', ''), ('p/air06', '')])
     body = phead('교육', 'EDUCATION', '교육으로<br><span class="hl-l">사람을 키웁니다</span>',
                  '심리치료상담을 전공한 소장이 직접 설계한 프로그램으로, 자신의 감정을 이해하고, 함께 소통하고, 스스로의 길을 찾아가도록 돕습니다. 즐거운 활동 속에서 배우기 때문에 오래 기억에 남습니다.') + f'''
 <section class="sec"><div class="wrap">
@@ -550,9 +554,9 @@ def build_edu():
 </div></section>
 <section class="sec sand" id="class"><div class="wrap">
   <div class="sechead"><div><span class="eb"><i></i>CLASS</span><h2 class="h2 rv">수업 <span class="hl-l">현장</span></h2></div>
-    <p class="lead rv" style="margin:0">과학실험 마술수업 현장입니다. 실험을 눈앞에서 보고, 아이들이 함께 참여합니다.</p></div>
+    <p class="lead rv" style="margin:0">임원 리더십 교육, 과학실험 마술수업, 진로체험 현장입니다. 아이들이 직접 움직이며 함께 참여합니다.</p></div>
   <div class="vids">{vids}</div>
-  <div class="gal rv" style="margin-top:22px">{cgal}</div>
+  <div class="gal sg n6 rv" style="margin-top:22px">{cgal}</div>
 </div></section>
 <section class="sec dark"><div class="wrap">
   <span class="eb"><i></i>COURSE</span><h2 class="h2 rv">회차는 <span class="hl-l">필요에 맞게</span></h2>
@@ -756,6 +760,14 @@ STORIES = [
          photos=['p/univ02', 'p/univ03', 'p/univ01', 'p/univ04', 'p/univ05', 'p/univ06'],
          text='현수막이 걸린 강당 무대에서 열린 대학 축제 공연입니다. 무대 진행과 공연 순서를 맞춰 객석과 무대가 함께하는 시간을 만들었습니다.',
          cta=('event.html#local', '지자체 · 축제 행사 보기')),
+    dict(id='leader', tag='교육', title='강당에서 함께한 초등학교 임원 리더십 교육', f='edu',
+         photos=['p/lead01', 'p/lead03', 'p/lead04', 'p/lead02', 'p/lead05'],
+         text='2025년 봄, 초등학교 임원 학생들과 함께한 리더십 교육입니다. 무대 강의, 강당 바닥에 둘러앉아 나누는 이야기, 팀을 나눠 몸으로 움직이는 활동으로 소통과 협력을 배웠습니다.',
+         cta=('education.html#class', '수업 영상 보기')),
+    dict(id='career', tag='교육', title='비행기가 있는 학교로 떠난 진로체험', f='edu',
+         photos=['p/air01', 'p/air02', 'p/air05', 'p/air06', 'p/air03', 'p/air07'],
+         text='2022년 여름, 항공고등학교에서 진행한 진로체험입니다. 학교 안의 실물 항공기와 엔진, 캠퍼스 모형을 둘러보고 교실 수업까지, 직업과 진로를 눈으로 보고 생각해 보는 시간이었습니다.',
+         cta=('education.html', '진로 · 직업체험 보기')),
     dict(id='science', tag='교육', title='눈앞에서 보는 과학실험 마술수업', f='edu',
          photos=['p/sci10', 'p/sci01', 'p/sci07', 'p/sci08', 'p/sci04', 'p/sci06'],
          text='마술 속에 숨은 과학 원리를 직접 실험하며 배우는 수업입니다. 아이들이 앞에 모여 실험을 지켜보고, 무대에 함께 올라 참여합니다. 수업 영상은 교육 페이지에서 보실 수 있습니다.',

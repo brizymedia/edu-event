@@ -445,3 +445,6 @@ form.f .hp{position:absolute;left:-9999px}
 .gal.sg.n5 figure:nth-child(-n+2){grid-column:span 3}
 .gal.sg.n4 figure{grid-column:span 3}
 @media (max-width:760px){.gal.sg{grid-template-columns:1fr 1fr}.gal.sg figure,.gal.sg.n5 figure:nth-child(-n+2),.gal.sg.n4 figure{grid-column:span 1}.gal.sg.n5 figure:first-child{grid-column:span 2}}
+.gal.sg.n7 figure:nth-child(-n+3){grid-column:span 2}.gal.sg.n7 figure:nth-child(n+4){grid-column:span 3}
+.gal.sg.n7 figure:nth-child(n+4){aspect-ratio:16/9}
+@media (max-width:760px){.gal.sg.n7 figure:nth-child(n){grid-column:span 1;aspect-ratio:4/3}.gal.sg.n7 figure:first-child{grid-column:span 2}}
