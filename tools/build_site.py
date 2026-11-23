@@ -26,12 +26,12 @@ KAKAO = 'http://pf.kakao.com/_XVrSs/chat'
 NBLOG = 'https://blog.naver.com/event_edu'
 BASE = 'https://www.event-edu.co.kr'   # 도메인을 정하면 여기만 바꾸고 다시 실행 (계약: 도메인 오픈 시점에 협의)
 NOINDEX = True                               # 오픈 확정 뒤 False 로 바꾸고 다시 실행
-VER = '2'
+VER = '3'
 EDIT_HASH = '15537d4153185a776f0e6b1512f411d17593a40ebf0d3bc5a89f6ae8cffa6c4c'   # 사장님 직접 수정 열쇠의 sha256 (열쇠 자체는 어디에도 적지 않는다)
 OG = BASE + '/assets/img/og.jpg'
 MAP = 'https://map.naver.com/p/search/' + '%EC%9D%B8%EC%B2%9C%EA%B4%91%EC%97%AD%EC%8B%9C%20%EB%82%A8%EB%8F%99%EA%B5%AC%20%EB%AC%B8%ED%99%94%EC%84%9C%EB%A1%9C62%EB%B2%88%EA%B8%B8%2017'
 
-NAV = [('about.html', '회사 소개'), ('event.html', '행사'), ('education.html', '교육'), ('portfolio.html', '포트폴리오'), ('contact.html', '견적 문의')]
+NAV = [('about.html', '회사 소개'), ('event.html', '행사'), ('education.html', '교육'), ('stories.html', '행사 이야기'), ('portfolio.html', '갤러리'), ('blog/index.html', '블로그'), ('contact.html', '견적 문의')]
 
 # ════════════════════════ 자료 ════════════════════════
 EVENT_CATS = [
@@ -175,7 +175,7 @@ def header(cur):
   <button class="mbtn" aria-label="메뉴 열기" aria-expanded="false" aria-controls="sheet"><i></i><i></i><i></i></button>
 </div></header>
 <div class="sheet" id="sheet">{sheet}
-  <div class="sub"><a href="ceo.html">대표 소개</a><a href="notice.html">공지사항</a><a href="quote.html">자동 견적서</a><a href="blog/index.html">블로그</a><a href="{NBLOG}" target="_blank" rel="noopener">네이버 블로그</a></div>
+  <div class="sub"><a href="ceo.html">대표 소개</a><a href="notice.html">공지사항</a><a href="quote.html">자동 견적서</a><a href="{NBLOG}" target="_blank" rel="noopener">네이버 블로그</a></div>
   <div class="btns" style="margin-top:28px">{btn("tel:" + TEL_RAW, "전화 " + TEL, "coral")}</div>
 </div>'''
 
@@ -186,7 +186,7 @@ def footer():
     <div><img class="fl" src="assets/img/logo-h.png" alt="{NAME}" width="243" height="36">
       <div class="info"><b style="color:#fff">{NAME}</b> · 소장 {CEO}<br>사업자등록번호 {BIZNO}<br>{ADDR}<br>전화 <a href="tel:{TEL_RAW}" style="display:inline">{TEL}</a> · <a href="mailto:{EMAIL}" style="display:inline">{EMAIL}</a></div></div>
     <div><h4>회사</h4><a href="about.html">회사 소개</a><a href="ceo.html">대표 소개</a><a href="notice.html">공지사항</a><a href="contact.html">오시는 길</a></div>
-    <div><h4>서비스</h4><a href="event.html">행사</a><a href="education.html">교육</a><a href="portfolio.html">포트폴리오</a><a href="quote.html">자동 견적서</a><a href="blog/index.html">블로그</a></div>
+    <div><h4>서비스</h4><a href="event.html">행사</a><a href="education.html">교육</a><a href="stories.html">행사 이야기</a><a href="portfolio.html">갤러리 · 포트폴리오</a><a href="blog/index.html">블로그</a><a href="quote.html">자동 견적서</a></div>
     <div><h4>문의</h4><a href="contact.html">견적 문의</a><a href="{KAKAO}" target="_blank" rel="noopener">카카오톡 상담</a><a href="{NBLOG}" target="_blank" rel="noopener">네이버 블로그</a></div>
   </div>
   <div class="copy"><span>© {datetime.date.today().year} {NAME}. All rights reserved.</span><span>즐거움을 기획하고, 성장을 교육합니다</span></div>
@@ -578,7 +578,7 @@ def build_portfolio():
         for r in SCHOOLS)
     rev = ''.join(f'<figure class="rv d{i % 3 + 1}"><p>{t}</p><cite>{who}</cite></figure>' for i, (t, who) in enumerate(REVIEWS))
     rev += '<figure class="rv shot d2"><img src="assets/img/review-kakao.webp" alt="운동회를 마친 학교 선생님과 나눈 실제 카카오톡 대화" loading="lazy"></figure>'
-    body = phead('포트폴리오', 'PORTFOLIO', '저희가 <span class="hl">다녀온</span> 행사',
+    body = phead('갤러리', 'GALLERY', '저희가 <span class="hl">다녀온</span> 행사',
                  '운동장에서 체육관, 무대까지. 현장에서 직접 찍은 사진과 학교 선생님들의 후기를 모았습니다.') + f'''
 <section class="sec" style="padding-top:40px"><div class="wrap">
   <div class="filters" role="group" aria-label="분류">{filt}</div>
@@ -605,7 +605,7 @@ def build_portfolio():
 </div></section>
 {cta_band()}
 '''
-    page('portfolio.html', f'포트폴리오 | 운동회·체육대회·매직쇼 현장 | {NAME}', '유치원·어린이집·초등학교 운동회, 체육대회, 매직쇼, 기업체 행사 현장 사진과 학교 선생님 후기, 2011년부터 레크리에이션을 맡긴 학교 298곳 실적.', body, 'portfolio.html')
+    page('portfolio.html', f'갤러리 · 포트폴리오 | 운동회·체육대회·매직쇼 현장 | {NAME}', '유치원·어린이집·초등학교 운동회, 체육대회, 매직쇼, 기업체 행사 현장 사진과 학교 선생님 후기, 2011년부터 레크리에이션을 맡긴 학교 298곳 실적.', body, 'portfolio.html')
 
 
 # ════════════════════════ 견적 문의 ════════════════════════
@@ -733,6 +733,66 @@ def build_notice_admin():
     page('notice-admin.html', f'공지사항 관리 | {NAME}', '공지사항 관리 화면', body, '', extra_head='<meta name="robots" content="noindex,nofollow">')
 
 
+# ════════════════════════ 행사 이야기 ════════════════════════
+# 대표님이 2026-10-25 폴더별로 보내 준 사진으로 엮은 현장 기록. 글은 사진에 보이는 것과 사이트에 있는 사실만 쓴다.
+STORIES = [
+    dict(id='school', tag='초등학교', title='운동장을 가득 채운 초등학교 운동회', f='school',
+         photos=['p/school05', 'p/school09', 'p/school11', 'p/school14', 'p/school21', 'p/school24'],
+         text='트랙 달리기부터 에어바운스 게이트, 대형 공 굴리기, 반 전체가 함께 드는 대형 천 놀이까지. 학년별 눈높이에 맞춘 종목으로 아이들과 선생님, 학부모님이 함께 웃는 하루를 만들었습니다.',
+         cta=('event.html#school', '초등학교 행사 보기')),
+    dict(id='church', tag='교회', title='온 성도가 함께 뛴 전교인 명랑운동회', f='church',
+         photos=['p/church01', 'p/church21', 'p/church10', 'p/church06', 'p/church22', 'p/church16'],
+         text='주일학교 아이들부터 어른 성도까지 한 운동장에 모였습니다. 낙하산 놀이, 터널 통과, 긴 막대 릴레이, 대형 블록 쌓기처럼 온 가족이 같이 할 수 있는 종목으로 진행했습니다.',
+         cta=('event.html#church', '교회 행사 보기')),
+    dict(id='gov', tag='기업체 · 기관', title='체육관에서 열린 관공서 체육대회', f='gov',
+         photos=['p/gov01', 'p/gov02', 'p/gov03', 'p/gov04', 'p/gov05'],
+         text='단체 사진으로 시작해 팀 대항 경기로 이어진 실내 체육대회입니다. 넓은 체육관에서도 한 팀처럼 움직일 수 있도록 순서와 동선을 맞춰 진행했습니다.',
+         cta=('event.html#corp', '기업체 · 기관 행사 보기')),
+    dict(id='corp', tag='기업체 · 기관', title='대형 무대 위의 기업 레크리에이션', f='corp',
+         photos=['p/corp01', 'p/corp03', 'p/corp02', 'p/corp04'],
+         text='대형 스크린과 조명이 있는 무대에서 진행한 기업 행사입니다. 레크리에이션과 마술 무대로 객석의 참여를 이끌었습니다.',
+         cta=('event.html#corp', '기업체 · 기관 행사 보기')),
+    dict(id='univ', tag='지자체 · 축제', title='강당 무대에서 열린 축제 공연', f='local',
+         photos=['p/univ02', 'p/univ03', 'p/univ01', 'p/univ04', 'p/univ05', 'p/univ06'],
+         text='현수막이 걸린 강당 무대에서 열린 대학 축제 공연입니다. 무대 진행과 공연 순서를 맞춰 객석과 무대가 함께하는 시간을 만들었습니다.',
+         cta=('event.html#local', '지자체 · 축제 행사 보기')),
+    dict(id='science', tag='교육', title='눈앞에서 보는 과학실험 마술수업', f='edu',
+         photos=['p/sci10', 'p/sci01', 'p/sci07', 'p/sci08', 'p/sci04', 'p/sci06'],
+         text='마술 속에 숨은 과학 원리를 직접 실험하며 배우는 수업입니다. 아이들이 앞에 모여 실험을 지켜보고, 무대에 함께 올라 참여합니다. 수업 영상은 교육 페이지에서 보실 수 있습니다.',
+         cta=('education.html#class', '수업 영상 보기')),
+    dict(id='magic', tag='공연', title='아이들이 마술사가 되는 마술 공연', f='magic',
+         photos=['p/magic04', 'p/magic06', 'p/magic02', 'p/magic07', 'p/magic08', 'p/magic05'],
+         text='관객이 무대에 올라 함께 마술을 완성하는 참여형 공연입니다. 유치원 강당부터 행사장 무대까지, 공간에 맞춰 공연합니다.',
+         cta=('portfolio.html#video', '공연 영상 보기')),
+]
+
+
+def build_stories():
+    toc = ''.join(f'<a href="#{s["id"]}">{s["title"].split(" ")[-1] if False else s["tag"] + " · " + s["title"][:12] + "…"}</a>' for s in STORIES)
+    toc = ''.join(f'<a href="#{s["id"]}">{esc(s["title"])}</a>' for s in STORIES)
+    blocks = ''
+    for i, s in enumerate(STORIES):
+        ph = s['photos']
+        imgs = ''.join(
+            f'<figure data-t="{esc(s["title"])}"><img src="assets/img/{cd}.webp" alt="{esc(s["title"])} 현장 사진 {k + 1}" loading="lazy" decoding="async"></figure>'
+            for k, cd in enumerate(ph))
+        blocks += f'''<article class="story" id="{s["id"]}">
+  <div class="story-head rv"><span class="no">{i + 1:02d}</span><span class="eb{" lime" if i % 2 else ""}"><i></i>{esc(s["tag"])}</span>
+    <h2>{esc(s["title"])}</h2><p>{esc(s["text"])}</p>
+    <div class="btns">{btn(s["cta"][0], s["cta"][1], "line sm")}{btn("portfolio.html#" + s["f"], "사진 더 보기", "sm")}</div></div>
+  <div class="gal sg n{len(ph)} rv">{imgs}</div>
+</article>'''
+    body = phead('행사 이야기', 'STORIES', '현장에서 만난<br><span class="hl">행사 이야기</span>',
+                 '운동장, 체육관, 강당, 교실까지. 이벤트와 교육연구소가 함께한 현장을 사진으로 모았습니다.') + f'''
+<section class="sec" style="padding-top:34px"><div class="wrap">
+  <div class="tabs" aria-label="이야기 바로가기">{toc}</div>
+  {blocks}
+</div></section>
+{cta_band('우리 행사도 이렇게 만들고 싶으세요?', '날짜 · 장소 · 인원만 알려 주시면 맞춤 구성을 제안해 드립니다.')}
+'''
+    page('stories.html', f'행사 이야기 | 운동회·체육대회·축제·과학수업 현장 | {NAME}', '초등학교 운동회, 교회 전교인 명랑운동회, 관공서 체육대회, 기업 레크리에이션, 대학 축제, 과학실험 마술수업, 마술 공연 — 이벤트와 교육연구소가 함께한 현장 기록.', body, 'stories.html')
+
+
 def build_404():
     body = f'''<section class="phead" style="min-height:70vh;display:grid;align-items:center"><div class="wrap"><span class="eb"><i></i>404</span><h1>페이지를 찾을 수 없어요</h1><p class="lead">주소가 바뀌었거나 없는 페이지입니다.</p><div style="margin-top:26px">{btn("index.html", "처음으로", "coral")}</div></div></section>'''
     page('404.html', f'페이지를 찾을 수 없습니다 | {NAME}', '페이지를 찾을 수 없습니다.', body, '')
@@ -740,7 +800,7 @@ def build_404():
 
 # ════════════════════════ 사이트맵 · robots · llms ════════════════════════
 def build_meta():
-    pages = ['', 'about.html', 'ceo.html', 'event.html', 'education.html', 'portfolio.html', 'contact.html', 'notice.html', 'quote.html']
+    pages = ['', 'about.html', 'ceo.html', 'event.html', 'education.html', 'stories.html', 'portfolio.html', 'contact.html', 'notice.html', 'quote.html']
     today = datetime.date.today().isoformat()
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(
         f'<url><loc>{BASE}/{p}</loc><lastmod>{today}</lastmod></url>\n' for p in pages) + '</urlset>\n'
@@ -773,4 +833,4 @@ def build_meta():
 
 
 if __name__ == '__main__':
-    build_index(); build_about(); build_ceo(); build_event(); build_edu(); build_portfolio(); build_contact(); build_notice(); build_notice_admin(); build_404(); build_meta()
+    build_index(); build_about(); build_ceo(); build_event(); build_edu(); build_portfolio(); build_contact(); build_notice(); build_stories(); build_notice_admin(); build_404(); build_meta()

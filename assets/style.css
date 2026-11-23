@@ -89,7 +89,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 .sheet.open a.m{transform:none;opacity:1}
 .sheet.open a.m:nth-child(2){transition-delay:.05s}.sheet.open a.m:nth-child(3){transition-delay:.1s}.sheet.open a.m:nth-child(4){transition-delay:.15s}.sheet.open a.m:nth-child(5){transition-delay:.2s}
 .sheet .sub{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:15px;color:var(--soft)}
-@media (max-width:1060px){.hdr nav,.hdr .tel{display:none}.mbtn{display:block}.hdr .pill{padding:7px 7px 7px 18px}}
+@media (max-width:1240px){.hdr nav,.hdr .tel{display:none}.mbtn{display:block}.hdr .pill{padding:7px 7px 7px 18px}}
 
 /* ── 히어로: 행사 | 교육 좌우 2분할 + 가운데 아치 ── */
 .hero{position:relative;min-height:100vh;min-height:100svh;display:grid;grid-template-columns:1fr 1fr;background:var(--ink);overflow:hidden;isolation:isolate}
@@ -429,3 +429,19 @@ form.f .hp{position:absolute;left:-9999px}
 .stat .tt{font-style:normal;font-weight:700;font-size:15px;line-height:1.45;color:var(--ink);min-height:2.9em;display:flex;align-items:center;justify-content:center}
 .stat span{margin-top:0}
 .stat .sub{display:block;margin-top:auto;padding-top:10px;border-top:2px dashed rgba(61,57,56,.5);width:100%;font-size:13.5px;font-weight:600;color:var(--soft)}
+
+/* 머리글 메뉴 7개 */
+.hdr nav a{padding:10px 12px;font-size:15px}
+@media (max-width:1320px){.hdr .tel span.n{display:none}}
+/* 행사 이야기 */
+.story{padding:clamp(40px,6vw,80px) 0;border-top:1px solid var(--line)}
+.story:first-of-type{border-top:0}
+.story-head{max-width:760px;margin-bottom:26px}
+.story-head .no{font-family:var(--display);font-size:20px;color:var(--coral-ink);margin-right:10px}
+.story-head h2{font-size:clamp(26px,3.4vw,42px);margin:14px 0 12px}
+.story-head p{color:var(--soft);margin-bottom:20px}
+.gal.sg{grid-template-columns:repeat(6,1fr);grid-auto-rows:auto}
+.gal.sg figure{grid-column:span 2;grid-row:auto;aspect-ratio:4/3}
+.gal.sg.n5 figure:nth-child(-n+2){grid-column:span 3}
+.gal.sg.n4 figure{grid-column:span 3}
+@media (max-width:760px){.gal.sg{grid-template-columns:1fr 1fr}.gal.sg figure,.gal.sg.n5 figure:nth-child(-n+2),.gal.sg.n4 figure{grid-column:span 1}.gal.sg.n5 figure:first-child{grid-column:span 2}}
