@@ -317,7 +317,7 @@ def build_index():
     <p class="lead rv" style="margin:0">운동장에서 강당까지, 같은 학교가 다시 불러주는 이유를 숫자로 담았습니다.</p></div>
   <div class="stats">
     <div class="stat rv d1"><em class="tt">행사 경력</em><b data-n="20">0<small>년</small></b><span>무대와 현장에서 쌓아 온 시간</span><small class="sub">운동회 · 레크리에이션 · 매직쇼</small></div>
-    <div class="stat rv d2"><em class="tt">2011년부터 레크리에이션을 맡긴 학교</em><b data-n="94">0<small>곳</small></b><span>해마다 다시 불러주시는 학교들</span><small class="sub">서울 45 · 경기 37 · 인천 9 · 그 외 3</small></div>
+    <div class="stat rv d2"><em class="tt">2011년부터 레크리에이션을 맡긴 학교</em><b data-n="298">0<small>곳</small></b><span>해마다 다시 불러주시는 학교들</span><small class="sub">서울 · 경기 · 인천 외</small></div>
     <div class="stat rv d3"><em class="tt">대상별 행사</em><b data-n="5">0<small>개 분야</small></b><span>유치원부터 기업까지, 대상별 맞춤 행사</span><small class="sub">유치원 · 학교 · 기업 · 지자체 · 교회</small></div>
     <div class="stat rv d4"><em class="tt">교육 프로그램</em><b data-n="6">0<small>가지</small></b><span>직접 기획한 교육 프로그램</span><small class="sub">임원리더십 · 진로 · 과학 등</small></div>
   </div>
@@ -595,7 +595,7 @@ def build_portfolio():
 
 <section class="sec" id="record"><div class="wrap">
   <div class="sechead"><div><span class="eb lime"><i></i>TRACK RECORD</span><h2 class="h2 rv">해마다 다시 <span class="hl">불러주시는</span> 학교들</h2></div>
-    <p class="lead rv" style="margin:0">2011년부터 운동회를 맡겨주신 학교 94곳입니다. 숫자는 진행 연도예요.</p></div>
+    <p class="lead rv" style="margin:0">2011년부터 레크리에이션을 맡겨주신 학교는 298곳입니다. 아래는 그중 진행 연도가 정리된 94곳이에요.</p></div>
   <div class="regions">{regs}</div>
 </div></section>
 
@@ -605,7 +605,7 @@ def build_portfolio():
 </div></section>
 {cta_band()}
 '''
-    page('portfolio.html', f'포트폴리오 | 운동회·체육대회·매직쇼 현장 | {NAME}', '유치원·어린이집·초등학교 운동회, 체육대회, 매직쇼, 기업체 행사 현장 사진과 학교 선생님 후기, 2011년부터 운동회를 맡긴 학교 94곳 실적.', body, 'portfolio.html')
+    page('portfolio.html', f'포트폴리오 | 운동회·체육대회·매직쇼 현장 | {NAME}', '유치원·어린이집·초등학교 운동회, 체육대회, 매직쇼, 기업체 행사 현장 사진과 학교 선생님 후기, 2011년부터 레크리에이션을 맡긴 학교 298곳 실적.', body, 'portfolio.html')
 
 
 # ════════════════════════ 견적 문의 ════════════════════════
@@ -766,7 +766,7 @@ def build_meta():
 - {BASE}/ceo.html 대표 소개
 - {BASE}/event.html 행사
 - {BASE}/education.html 교육
-- {BASE}/portfolio.html 포트폴리오 · 후기 · 운동회 실적 학교 94곳
+- {BASE}/portfolio.html 포트폴리오 · 후기 · 레크리에이션을 맡긴 학교 298곳
 - {BASE}/contact.html 견적 문의
 '''
     open(os.path.join(ROOT, 'llms.txt'), 'w', encoding='utf-8', newline='\n').write(ll)
