@@ -1,4 +1,18 @@
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /contract.html
+Disallow: /statement.html
+Disallow: /office.html
+Disallow: /schedule.html
+Disallow: /upload.html
+Disallow: /notice-admin.html
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
 
 Sitemap: https://www.event-edu.co.kr/sitemap.xml
