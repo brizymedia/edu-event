@@ -25,6 +25,7 @@ EMAIL = 'ihahanara@gmail.com'                # 기존 시안의 대표 메일 �
 KAKAO = 'http://pf.kakao.com/_XVrSs/chat'
 NBLOG = 'https://blog.naver.com/event_edu'
 BASE = 'https://www.event-edu.co.kr'   # 도메인을 정하면 여기만 바꾸고 다시 실행 (계약: 도메인 오픈 시점에 협의)
+SITE_VERIFY = {'google': 'iiKcvLnftsC4FLgVIkQwA7DGZDghcp8JTnMxBIcksFk', 'naver': 'f7a594a8b290d8645e7b310ff6bce100a36e41ec'}   # 검색 소유확인 값. 지우면 네이버 · 구글 등록이 풀린다
 NOINDEX = False                              # 오픈 확정 뒤 False 로 바꾸고 다시 실행
 VER = '4'
 EDIT_HASH = '15537d4153185a776f0e6b1512f411d17593a40ebf0d3bc5a89f6ae8cffa6c4c'   # 사장님 직접 수정 열쇠의 sha256 (열쇠 자체는 어디에도 적지 않는다)
@@ -219,6 +220,12 @@ def page(fn, title, desc, body, cur='', extra_head='', og_img=None):
     url = BASE + '/' + ('' if fn == 'index.html' else fn)
     robots = '<meta name="robots" content="noindex,nofollow">' if NOINDEX else ''
     og = og_img or OG
+    VERIFY = ''
+    if fn == 'index.html':
+        if SITE_VERIFY['google']:
+            VERIFY += '<meta name="google-site-verification" content="' + SITE_VERIFY['google'] + '">\n'
+        if SITE_VERIFY['naver']:
+            VERIFY += '<meta name="naver-site-verification" content="' + SITE_VERIFY['naver'] + '">\n'
     EDIT_META = ('<meta name="edu-edit" content="' + EDIT_HASH + '">') if fn not in ('notice-admin.html', '404.html') else ''
     out = f'''<!DOCTYPE html>
 <html lang="ko">
@@ -229,7 +236,7 @@ def page(fn, title, desc, body, cur='', extra_head='', og_img=None):
 <meta name="description" content="{esc(desc)}">
 {robots}
 <meta name="theme-color" content="#FFF9F1">
-{EDIT_META}
+{VERIFY}{EDIT_META}
 <link rel="canonical" href="{url}">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/favicon.png">
